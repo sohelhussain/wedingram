@@ -7,5 +7,8 @@ app.get('/', function (req, res) {
 app.get('/user', function (req, res) {
   res.send('Hello World ji')
 })
+app.get('/profile', function (req, res) {
+  res.send('Hello World ji')
+})
 
 app.listen(3000);
