@@ -1,5 +1,5 @@
 {
-    "watch": ["src"],
+    "watch": "*",
     "ext": "js,css",
-    "exec": "npm run lint:fix && npm run build:css && node app.js"
+    "exec": "npm run lint:fix && node app.js"
   }
