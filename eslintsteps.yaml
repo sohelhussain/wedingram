@@ -1,0 +1,56 @@
+SETUP AND CONFIGURE
+----------------------------------------------------------------
+npm install eslint --save-dev
+npx eslint --init
+
+create a file .eslintrc.js
+module.exports = {
+  env: {
+    browser: true,
+    es2021: true,
+    node: true,
+  },
+  extends: [
+    'eslint:recommended',
+  ],
+  parserOptions: {
+    ecmaVersion: 12,
+    sourceType: 'module',
+  },
+  rules: {
+    'no-console': 'warn',
+    'no-unused-vars': 'warn',
+    'indent': ['error', 2],
+    'linebreak-style': ['error', 'unix'],
+    'quotes': ['error', 'single'],
+    'semi': ['error', 'always'],
+  },
+};
+
+npx eslint --fix .
+
+
+
+
+
+
+
+
+
+
+TO MAKE IT WORK ALTOGETHER
+----------------------------------------------------------------
+in nodemon.json
+{
+  "watch": ["src"],
+  "ext": "js,css",
+  "exec": "npm run lint:fix && npm run build:css && node app.js"
+}
+
+
+package.json
+{
+  "scripts": {
+    "lint:fix": "eslint --fix .",
+  }
+}

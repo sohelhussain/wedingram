@@ -1,0 +1,5 @@
+{
+    "watch": "*",
+    "ext": "js,css",
+    "exec": "npm run lint:fix && node app.js"
+  }
