@@ -1,13 +1,16 @@
 {
   "dependencies": {
+    "config": "^3.3.12",
     "ejs": "^3.1.10",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "mongoose": "^8.4.4"
   },
   "name": "wedingram",
   "version": "1.0.0",
   "description": "this is a readme file",
   "main": "app.js",
   "scripts": {
+    "start": "npx nodemon app.js",
     "lint:fix": "eslint --fix ."
   },
   "keywords": [],
