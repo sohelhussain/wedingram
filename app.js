@@ -10,4 +10,6 @@ app.get('/', (req, res) => {
   res.render('index')
 });
 
-app.listen(port);
+app.listen(port, () => {
+  console.log(`this port is listening on ${port}`);
+});
