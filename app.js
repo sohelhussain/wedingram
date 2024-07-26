@@ -1,17 +1,38 @@
+// Load environment variables from .env file
+require("dotenv").config();
 const express = require("express");
-const path = require("path");
 const app = express();
-const port = 3000;
-const cyber = require("./routes/cyber");
-const index = require("./routes/index");
+const indexRouter = require("./routes/index-router");
+const cyberRouter = require("./routes/cyber");
+const path = require("path");
+const expressSession = require("express-session");
+const flash = require("connect-flash");
+const PORT = process.env.PORT || 3000; // Use the port from environment variables or default to 3000
 
+require("./config/mongodb-connection");
+
+// Set the view engine to EJS
 app.set("view engine", "ejs");
+
+// Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, "public")));
 
-app.get("/cyber", cyber);
-app.get("/", index);
+// Middleware to parse JSON and URL-encoded data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
+app.use(
+  expressSession({
+    resave: false,
+    saveUninitialized: false,
+    secret: process.env.SECRET_KEY,
+  })
+);
+app.use(flash());
+
+app.get("/cyber", cyberRouter);
+app.get("/", indexRouter);
 
 app.listen(port, () => {
-  console.log(`this port is listening on ${port}`);
+  console.log(`this port is listening on ${PORT}`);
 });
