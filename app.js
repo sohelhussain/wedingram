@@ -12,4 +12,6 @@ app.get("/cyber", cyber);
 app.get("/", index);
 
 
-app.listen(port);
+app.listen(port, () => {
+  console.log(`this port is listening on ${port}`);
+});
