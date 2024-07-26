@@ -2,7 +2,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const indexRouter = require("./routes/index-router");
+const indexRouter = require("./routes/index");
 const cyberRouter = require("./routes/cyber");
 const path = require("path");
 const expressSession = require("express-session");
@@ -20,19 +20,18 @@ app.use(express.static(path.join(__dirname, "public")));
 // Middleware to parse JSON and URL-encoded data
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.use(
   expressSession({
     resave: false,
     saveUninitialized: false,
-    secret: process.env.SECRET_KEY,
+    secret: process.env.EXPRESS_SECRET_KEY,
   })
 );
 app.use(flash());
 
-app.get("/cyber", cyberRouter);
 app.get("/", indexRouter);
+app.get("/cyber", cyberRouter);
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   console.log(`this port is listening on ${PORT}`);
 });
