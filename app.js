@@ -29,8 +29,8 @@ app.use(
 );
 app.use(flash());
 
-app.get("/", indexRouter);
-app.get("/cyber", cyberRouter);
+app.use("/", indexRouter);
+app.use("/cyber", cyberRouter);
 
 app.listen(PORT, () => {
   console.log(`this port is listening on ${PORT}`);
