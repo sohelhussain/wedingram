@@ -1,0 +1,748 @@
+#main {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  #page1 {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  #over {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-image: url(images/header\ image.jpg);
+    background-position: bottom;
+  }
+  
+  #overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.579);
+    position: relative;
+  }
+  
+  #nav-bar {
+    height: 8vw;
+    width: 100%;
+    padding: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  
+  #nav-bar img {
+    height: 4.5vw;
+    width: 11vw;
+  }
+  
+  #nav-part1 {
+    display: flex;
+    position: relative;
+    gap: 2vw;
+  }
+  
+  .ham{
+    font-size: 2vw;
+    display: none;
+    color: white;
+  }
+  .side{
+    width: 70%;
+    height: 200vh;
+    background-color: white;
+    position: absolute;
+    top: 0%;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    right: -100%;
+    padding-top: 50%;
+  }
+  .side>a{
+    text-decoration: none;
+    color: #555;
+    margin-bottom: 15%;
+    font-size: 10vw;
+  }
+  .side a:active #sing{
+    stroke-dasharray: 2334;
+    stroke-dashoffset: 2334;
+    animation: draw 1s linear;
+    animation-fill-mode:forwards;
+  }
+  @keyframes draw {
+    to{
+      stroke-dashoffset: 0;
+    }
+  }
+  .side .ri-close-fill{
+    font-size: 10vw;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+  
+  #login-btn,
+  #signin-btn {
+    height: 3vw;
+    width: 8vw;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #signin-btn h4 {
+    font-weight: 600;
+    font-size: 1.2vw;
+    color: inherit;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #login-btn a {
+    font-weight: 600;
+    font-size: 1.2vw;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    z-index: 1;
+  }
+  
+  #login-btn::before,
+  #signin-btn::before {
+    content: "";
+    position: absolute;
+    height: 0%;
+    width: 100%;
+    background-color: #FD5C5F;
+    bottom: 0%;
+    z-index: 0;
+    border-radius: 50px;
+    transition: height 0.4s ease;
+  }
+  
+  #login-btn:hover::before,
+  #signin-btn:hover::before {
+    height: 100%;
+  }
+  
+  #login-btn:hover a,
+  #signin-btn:hover {
+    color: black;
+  }
+  
+  #login-btn:hover,
+  #signin-btn:hover {
+    border: 1px solid black;
+  }
+  
+  #page1 h1 {
+    position: absolute;
+    top: 35%;
+    left: 4%;
+    color: white;
+    font-family: Gilroy;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 6vw;
+    line-height: 6.5vw;
+  }
+  
+  #page2 {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .steps-container {
+    text-align: center;
+    background-color: white;
+    padding: 4vw;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1000px;
+  }
+  
+  .steps-container h2 {
+    margin-bottom: 3vw;
+  }
+  
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3vw;
+  }
+  
+  .step {
+    width: 20%;
+    text-align: center;
+  }
+  
+  .icon {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 1vw;
+  }
+  
+  .icon img {
+    width: 6vw;
+    height: 6vw;
+    border-radius: 50%;
+    background-color: #eaeaea;
+    padding: 1vw;
+  }
+  
+  .step-number {
+    position: absolute;
+    bottom: -1vw;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 50%;
+    width: 2.5vw;
+    height: 2.5vw;
+    line-height: 2.5vw;
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid #eaeaea;
+  }
+  
+  .step h3 {
+    margin: 1vw 0;
+    font-size: 1.1vw;
+  }
+  
+  .step p {
+    font-size: 0.9vw;
+    color: #555;
+  }
+  
+  .arrow {
+    font-size: 2vw;
+    color: #aaa;
+  }
+  
+  .register-btn {
+    background-color: #FD5C5F;
+    color: white;
+    border: none;
+    padding: 1vw 2vw;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1vw;
+  }
+  
+  #page3 {
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  #bubble-effect {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .page3-heading {
+    font-size: 4vw;
+    margin-left: 3vw;
+    margin-bottom: 2.5vw;
+  }
+  
+  .elem {
+    height: 10vw;
+    width: 100%;
+    border-bottom: 1px solid rgb(49, 44, 44);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #bubble-effect h1 {
+    position: relative;
+    font-weight: 700;
+    font-size: 4vw;
+    margin: 1.5vw 3vw;
+    z-index: 9;
+    letter-spacing: -1px;
+  }
+  
+  #overlay2 {
+    height: 100%;
+    width: 100%;
+    background-color: #FD5C5F;
+    position: absolute;
+    top: -100%;
+    transition: all ease 0.2s;
+  }
+  
+  .elem:hover #overlay2 {
+    top: 0%;
+  }
+  
+  #fixed-img {
+    height: 30vw;
+    width: 23vw;
+    background-color: gray;
+    position: fixed;
+    top: 25%;
+    left: 45%;
+    z-index: 999999;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    display: none;
+  }
+  
+  #page4 {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    margin-top: 2vw;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    width: 80%;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 8px;
+    padding: 2vw;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1vw 2vw;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .header img {
+    height: 5vw;
+  }
+  
+  .register-btn {
+    background-color: #FD5C5F;
+    color: white;
+    border: none;
+    padding: 1vw 2vw;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .plans {
+    display: flex;
+    justify-content: space-between;
+    padding: 2vw;
+    flex-wrap: wrap;
+  }
+  
+  .plan {
+    width: 48%;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 2vw;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .plan h2 {
+    text-align: center;
+    color: #FD5C5F;
+  }
+  
+  .plan ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .plan ul li {
+    padding: 1vw 0;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  .plan ul li:last-child {
+    border-bottom: none;
+  }
+  
+  .membership-btn {
+    background-color: #FD5C5F;
+    color: white;
+    border: none;
+    padding: 1vw 2vw;
+    border-radius: 4px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 2vw;
+  }
+  
+  #page5 {
+    height: 50%;
+    width: 100%;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2vw 0;
+    background-color: white;
+    border-top: 1px solid #ddd;
+  }
+  
+  .footer-section {
+    flex: 1;
+    padding: 0 1.5vw;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.8vw;
+    margin-bottom: 1.5vw;
+    color: black;
+  }
+  
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footer-section ul li {
+    margin-bottom: 1vw;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    width: fit-content;
+    margin-right: 30%;
+  }
+  
+  .footer-section ul li a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.4vw;
+  }
+  .footer-section ul li span {
+    position: absolute;
+    top: -1.5vw; /* Adjust to move the SVG to the desired top position */
+    left: 50%; /* Center the SVG horizontally */
+    transform: translateX(-50%); /* Center the SVG horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px; /* Ensure the span has height to properly center */
+  }
+  .footer-section ul li svg{
+    width: 100%;
+    height: 100%;
+  }
+  /* ***********--this is a svg code--************** */
+  
+  .footer-section ul li:hover #sing{
+    stroke-dasharray: 2334;
+    stroke-dashoffset: 2334;
+    animation: draw 1s linear;
+    animation-fill-mode:forwards;
+  }
+  @keyframes draw {
+    to{
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  
+  
+  /* ***********--responsive code by harsh--************** */
+  
+  @media (max-width: 768px) {
+    #nav-bar {
+      height: auto;
+      padding: 5vw;
+    }
+  
+    #nav-bar img {
+      height: 10vw;
+      width: auto;
+    }
+  
+    #nav-part1 {
+      display: none !important;
+      gap: 1vw;
+    }
+    .ham{
+      display: block;
+      font-size: 7vw;
+    }
+  
+    #login-btn, #signin-btn {
+      height: 8vw;
+      width: auto;
+      padding: 0 2vw;
+    }
+  
+    #signin-btn h4, #login-btn a {
+      font-size: 3vw;
+    }
+  
+    #page1 h1 {
+      font-size: 12vw;
+      line-height: 16vw;
+      left: 5%;
+      top: 30%;
+    }
+  
+    .steps-container {
+      padding: 6vw;
+    }
+  
+    .steps {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .step {
+      width: 80%;
+      margin-bottom: 2vw;
+    }
+  
+    .icon img {
+      width: 10vw;
+      height: 10vw;
+    }
+  
+    .step-number {
+      width: 4vw;
+      height: 4vw;
+      line-height: 4vw;
+      font-size: 2vw;
+    }
+  
+    .step h3 {
+      font-size: 3vw;
+    }
+  
+    .step p {
+      font-size: 2.5vw;
+    }
+  
+    .register-btn {
+      font-size: 3vw;
+      padding: 2vw 4vw;
+    }
+  
+    #page3 {
+      margin-top: 7vh;
+      min-height: 50vh;
+      width: 100%;
+      padding-top: 1px;
+    }
+  
+    .page3-heading {
+      font-size: 6.5vw;
+      margin-top: 50px;
+      margin-bottom: 30px;
+    }
+  
+    #bubble-effect h1 {
+      font-size: 7vw;
+      margin: 0vw 4vw;
+    }
+    #bubble-effect .elem {
+      font-size: 7vw;
+      margin: 5vw 5vw;
+    }
+  
+    #fixed-img {
+      height: 40vw;
+      width: 30vw;
+      top: 20%;
+      left: 35%;
+    }
+  
+    .container {
+      width: 90%;
+      padding: 4vw;
+    }
+    .container h1{
+      margin-bottom: 5px;
+      margin-left: 15px;
+      
+    }
+    .header img {
+      height: 8vw;
+    }
+  
+    .plans {
+      flex-direction: column;
+    justify-content: space-between;
+    }
+  
+    .plan {
+      width: 100%;
+      margin-bottom: 4vw;
+    }
+    .plan:nth-child(2){
+      margin-top: 10px;
+    }
+    .plan h2 {
+      font-size: 5vw;
+    }
+  
+    .membership-btn {
+      font-size: 3.5vw;
+      padding: 2.5vw 4vw;
+    }
+  
+    #page4 {
+      height: 122%;
+      width: 100%;
+  
+    }
+  
+    footer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0vw 2vw;
+      border-top: 1px solid #ddd;
+    }
+    
+    .footer-section {
+      flex: 1;
+      padding: 0 1vw;
+      margin-left: 1vw;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .footer-section h3 {
+      font-size: 4vw;
+      margin-bottom: 1.5vw;
+      color: black;
+    }
+    
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 3vw;
+    }
+    
+    .footer-section ul li {
+      margin-bottom: 1vw;
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      width: fit-content;
+      margin-right: 30%;
+    }
+    
+    .footer-section ul li a {
+      text-decoration: none;
+      color: black;
+      font-size: 3.1vw;
+    }
+    .hed {
+      display: flex;
+      align-items: center;
+      overflow: hidden; 
+      height: 8vh;
+    }
+   
+    .hed h1 {
+      font-size: 10vw;
+      line-height: 6vw;
+      text-transform: uppercase;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.29);
+    }
+    .hed h2 {
+      font-size: 9vw;
+      line-height: 5vw;
+      text-transform: uppercase;
+      margin-left: 2vw;
+      animation: now 2s linear 0s infinite;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.29);
+    } 
+  
+    .timer h4 {
+      font-family: silk-regular;
+      font-weight: 100;
+      font-size: 20vw;
+      margin-top: 10vw;
+    }
+  
+    .wait {
+      margin-left: 15vw;
+      margin-top: 25vh;
+      overflow: hidden;
+    }
+    .wait h3 {
+      font-size: 2.5vw;
+      font-weight: 300;
+      text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.29);
+    }
+  
+    #nav-part1 {
+      display: flex;
+      position: relative;
+      right: -35%;
+      gap: 2vw; 
+      top: -25%;
+     }
+    
+    #login-btn,
+    #signin-btn {
+      height: 4vw;
+      width: 12vw;
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
+      border-radius: 50px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #signin-btn h4 {
+      font-weight: 600;
+      font-size: 2vw;
+      color: inherit;
+      position: relative;
+      z-index: 1;
+    }
+    
+    #login-btn a {
+      font-weight: 600;
+      font-size: 2vw;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      z-index: 1;
+    }
+    
+  }
+  
