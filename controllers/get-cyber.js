@@ -1,3 +1,6 @@
 module.exports.cyberController = (req, res) => {
-    res.send("this is a cyber test");
+    res.render("test");
+  }
+module.exports.verifyController = (req, res) => {
+    res.render("verifyotp");
   }

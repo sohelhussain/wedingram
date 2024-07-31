@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 const indexRouter = require("./routes/indexRoute");
-const cyberRouter = require("./routes/indexRoute");
+const cyberRouter = require("./routes/cyberRoute");
 const path = require("path");
 const expressSession = require("express-session");
 const flash = require("connect-flash");

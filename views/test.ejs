@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <title>User Registration</title>
+</head>
+<body class="bg-gray-100">
+
+  <div class="container mx-auto my-8 p-4 max-w-lg">
+    <h1 class="text-2xl font-bold mb-4">Register</h1>
+    <form action="/cyber/newcyber/create" method="POST" enctype="multipart/form-data" class="space-y-4">
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+        <input type="text" name="name" id="name" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input type="password" name="password" id="password" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+      </div>
+      <div>
+        <label for="shopRegistrationPhoto" class="block text-sm font-medium text-gray-700">Shop Registration Photo</label>
+        <input type="file" name="shopRegistrationPhoto" id="shopRegistrationPhoto" class="mt-1 block w-full text-gray-900 border border-gray-300 rounded-md cursor-pointer focus:outline-none sm:text-sm">
+      </div>
+      <div>
+        <label for="pancardPhoto" class="block text-sm font-medium text-gray-700">Pancard Photo</label>
+        <input type="file" name="pancardPhoto" id="pancardPhoto" class="mt-1 block w-full text-gray-900 border border-gray-300 rounded-md cursor-pointer focus:outline-none sm:text-sm">
+      </div>
+      <div>
+        <label for="adharcardPhoto" class="block text-sm font-medium text-gray-700">Adharcard Photo</label>
+        <input type="file" name="adharcardPhoto" id="adharcardPhoto" class="mt-1 block w-full text-gray-900 border border-gray-300 rounded-md cursor-pointer focus:outline-none sm:text-sm">
+      </div>
+      <div>
+        <label for="passportSizePhoto" class="block text-sm font-medium text-gray-700">Passport Size Photo</label>
+        <input type="file" name="passportSizePhoto" id="passportSizePhoto" class="mt-1 block w-full text-gray-900 border border-gray-300 rounded-md cursor-pointer focus:outline-none sm:text-sm">
+      </div>
+      <div class="flex justify-end">
+        <button type="submit" class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Register</button>
+      </div>
+    </form>
+  </div>
+
+</body>
+</html>
