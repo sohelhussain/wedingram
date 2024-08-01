@@ -1,6 +1,6 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const cyberModel = require("../models/cyber");
+const {cyberModel, cyberValidator} = require("../models/cyber");
 const { sendMail } = require("../utils/nodeMailer");
 
 module.exports.postRegisterController = async (req, res) => {
@@ -8,7 +8,15 @@ module.exports.postRegisterController = async (req, res) => {
   const { shopRegistrationPhoto = [], pancardPhoto = [], adharcardPhoto = [], passportSizePhoto = [] } = req.files || {};
 console.log(req.files);
 console.log(req.body);
+
+
   try {
+        // Validate input data
+
+    const  error  = cyberValidator({ name, email, password, shopRegistrationPhoto, pancardPhoto, adharcardPhoto, passportSizePhoto });
+    if (error) {
+      return res.status(400).json({ error: error.details[0].message });
+    }
     // Check if the user already exists
     let existingUser = await cyberModel.findOne({ email });
     if (existingUser) return res.status(400).send("User already registered. Please log in.");
@@ -58,10 +66,13 @@ module.exports.postRegisterOtpverification = async (req, res) => {
       email,
       password: hash,
       shopRegistrationPhoto: shopRegistrationPhoto[0] ? shopRegistrationPhoto[0].buffer : null,
+      shopRegistrationPhotoMimetype: shopRegistrationPhoto[0] ? shopRegistrationPhoto[0].mimetype : null,
       pancardPhoto: pancardPhoto[0] ? pancardPhoto[0].buffer : null,
+      pancardPhotoMimetype: pancardPhoto[0] ? pancardPhoto[0].mimetype : null,
       adharcardPhoto: adharcardPhoto[0] ? adharcardPhoto[0].buffer : null,
+      adharcardPhotoMimetype: adharcardPhoto[0] ? adharcardPhoto[0].mimetype : null,
       passportSizePhoto: passportSizePhoto[0] ? passportSizePhoto[0].buffer : null,
-      imageMimetype: shopRegistrationPhoto[0] ? shopRegistrationPhoto[0].mimetype : null
+      passportSizePhotoMimetype: passportSizePhoto[0] ? passportSizePhoto[0].mimetype : null,
     });
 
     // Generate JWT token
