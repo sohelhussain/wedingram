@@ -18,6 +18,8 @@ const cybercafeSchema = new Schema(
     },
     password: { type: String, required: true },
     shopRegistrationPhoto: { type: String },
+    role: {
+      type: String, default: "cyber", enum: ["cyber"] },
     pancardPhoto: { type: String },
     adharcardPhoto: { type: String },
     passportSizePhoto: { type: String },

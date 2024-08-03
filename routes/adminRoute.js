@@ -1,10 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const { adminPageController } = require("../controllers/get-admin");
-const {
-  adminAuthPage,
-} = require("../middlewares/admin-middleware");
+const { adminCyberAuthPage, extract } = require("../middlewares/adminCyber-middleware");
 
-router.get("/", adminAuthPage(["admin", "superadmin"]), adminPageController);
+router.get(
+  "/",
+  adminCyberAuthPage(["admin"]), extract,
+  adminPageController
+);
 
 module.exports = router;

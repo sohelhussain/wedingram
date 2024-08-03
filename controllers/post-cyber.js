@@ -43,6 +43,6 @@ module.exports.postLoginController = async (req, res) => {
     res.cookie("token", token);
     res.send("cyber login successfully");
   } else {
-    res.send("somthing went wrong");
+    res.send("something went wrong");
   }
 };

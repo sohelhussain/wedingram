@@ -1,3 +1,4 @@
 module.exports.adminPageController = (req, res) => {
-    res.send('this is a admin page');
-}
+  const { name } = req.body;
+  res.send("this is a admin page " + name);
+};
