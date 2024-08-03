@@ -17,11 +17,12 @@ const cybercafeSchema = new Schema(
       ],
     },
     password: { type: String, required: true },
-    shopRegistrationPhoto: { type: Buffer, default: "" },
-    pancardPhoto: { type: Buffer, default: "" },
-    adharcardPhoto: { type: Buffer, default: "" },
-    passportSizePhoto: { type:Buffer , default: ""},
-    imageMimetype: { type: String },
+    shopRegistrationPhoto: { type: String },
+    role: {
+      type: String, default: "cyber", enum: ["cyber"] },
+    pancardPhoto: { type: String },
+    adharcardPhoto: { type: String },
+    passportSizePhoto: { type: String },
     createdBy: [{ type: Schema.Types.ObjectId, ref: "user" }],
   },
   { timestamps: true }
