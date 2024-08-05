@@ -58,6 +58,10 @@ const userSchema = new Schema(
   { timestamps: true }
 );
 
+
+const user = mongoose.model("user", userSchema);
+module.exports = user;
+
 // ! Password hashing middleware
 // userSchema.pre("save", async function (next) {
 //   if (!this.isModified("password")) return next();
@@ -75,5 +79,3 @@ const userSchema = new Schema(
 //   return bcrypt.compare(candidatePassword, this.password);
 // };
 
-const user = mongoose.model("user", userSchema);
-module.exports = user;
