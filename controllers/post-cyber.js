@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const {cyberModel, cyberValidator} = require("../models/cyberModel");
-const { sendMail } = require("../utils/nodeMailer");
+const  sendMail  = require("../utils/nodeMailer");
 
 module.exports.postRegisterController = async (req, res) => {
   const { name, email, password } = req.body;

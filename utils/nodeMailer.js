@@ -26,4 +26,4 @@ const sendMail = (mailOptions) => {
   });
 };
 
-module.exports = { sendMail };
+module.exports =  sendMail ;
