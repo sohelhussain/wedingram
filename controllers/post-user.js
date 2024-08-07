@@ -23,7 +23,7 @@
 //                     let token = generateToken(user)
 //                     res.cookie("token", token)
 //                     res.send(user)
-//                     // res.redirect("userProfile");
+//                     res.redirect("userProfile");
 
 //                 }
 //             });
@@ -56,7 +56,10 @@ module.exports.userCreateController = async (req, res) => {
             email,
             age,
             maritalStatus,
-            address,
+            district,
+            block,
+            panchayt,
+            village,
             fathersName,
             mothersName,
             disability,
@@ -93,7 +96,10 @@ module.exports.userCreateController = async (req, res) => {
                         email,
                         age,
                         maritalStatus,
-                        address,
+                        district,
+                        block,
+                        panchayt,
+                        village,
                         fathersName,
                         mothersName,
                         disability,

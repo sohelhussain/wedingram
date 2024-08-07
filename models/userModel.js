@@ -4,45 +4,48 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    firstName: { type: String, required: true, trim: true },
-    lastName: { type: String, required: true, trim: true },
-    gender: { type: String, required: true, enum: ["male", "female", "other"] },
+    firstName: { type: String, trim: true },
+    lastName: { type: String, trim: true },
+    gender: { type: String, enum: ["male", "female", "other"] },
     lookingFor: {
       type: String,
-      required: true,
+
       enum: ["male", "female", "other"],
     },
-    dob: { type: Date, required: true },
+    dob: { type: Date },
     category: { type: String, trim: true },
     education: { type: String, trim: true },
-    country: { type: String, required: true, trim: true },
-    state: { type: String, required: true, trim: true },
-    city: { type: String, required: true, trim: true },
+    country: { type: String, trim: true },
+    state: { type: String, trim: true },
+    city: { type: String, trim: true },
     phoneNumber: {
       type: String,
-      required: true,
+
       unique: true,
       match: [/^\d{10}$/, "Please fill a valid phone number"],
     },
     email: {
-        type: String,
-        minlength: 2,
-        maxlength: 50,
-        required: true,
-        trim: true,
-        unique: true,
-        lowercase: true,
-        match: [
-          /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
-          "Please fill a valid email address",
-        ],
-      },
-    age: { type: Number, required: true, min: 18, max: 100 },
+      type: String,
+      minlength: 2,
+      maxlength: 50,
+
+      trim: true,
+      unique: true,
+      lowercase: true,
+      match: [
+        /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
+        "Please fill a valid email address",
+      ],
+    },
+    age: { type: Number, min: 18, max: 100 },
     maritalStatus: {
       type: String,
       enum: ["single", "married", "divorced", "widowed"],
     },
-    address: { type: String, trim: true },
+    district: { type: String, trim: true },
+    block: { type: String, trim: true },
+    panchayt: { type: String, trim: true },
+    village: { type: String, trim: true },
     fathersName: { type: String, trim: true },
     mothersName: { type: String, trim: true },
     disability: { type: String, trim: true },
@@ -53,29 +56,10 @@ const userSchema = new Schema(
     drink: { type: String, enum: ["yes", "no", "occasionally"] },
     smoke: { type: String, enum: ["yes", "no", "occasionally"] },
     height: { type: String, trim: true },
-    password: { type: String, required: true },
+    password: { type: String },
   },
   { timestamps: true }
 );
 
-
 const user = mongoose.model("user", userSchema);
 module.exports = user;
-
-// ! Password hashing middleware
-// userSchema.pre("save", async function (next) {
-//   if (!this.isModified("password")) return next();
-//   try {
-//     const salt = await bcrypt.genSalt(10);
-//     this.password = await bcrypt.hash(this.password, salt);
-//     next();
-//   } catch (err) {
-//     next(err);
-//   }
-// });
-
-// ! Password comparison method
-// userSchema.methods.comparePassword = async function (candidatePassword) {
-//   return bcrypt.compare(candidatePassword, this.password);
-// };
-
