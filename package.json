@@ -18,7 +18,8 @@
   "description": "this is a readme file",
   "main": "app.js",
   "scripts": {
-    "start": "npx nodemon app.js",
+    "start": "node app.js",
+    "dev": "npx nodemon app.js",
     "lint:fix": "eslint --fix ."
   },
   "keywords": [],
