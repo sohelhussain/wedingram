@@ -51,6 +51,7 @@ const userSchema = new Schema(
     disability: { type: String, trim: true },
     hobbies: { type: String, trim: true },
     caste: { type: String, trim: true },
+    role:{type: String, default: 'user'},
     diet: { type: String, trim: true },
     complexion: { type: String, trim: true },
     drink: { type: String, enum: ["yes", "no", "occasionally"] },
