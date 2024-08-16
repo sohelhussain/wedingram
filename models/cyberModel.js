@@ -26,6 +26,7 @@ const cybercafeSchema = new Schema(
   adharcardPhotoMimetype: { type: String, default: "" },
   passportSizePhoto: { type: Buffer, default: "" },
   passportSizePhotoMimetype: { type: String, default: "" },
+  role:{type: String, default: 'cyber'},
   createdBy: [{ type: Schema.Types.ObjectId, ref: "user" }]
 
   },
