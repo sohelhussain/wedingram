@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding App - Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Navbar -->
+    <nav class="bg-red-200 shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="#" class="text-2xl font-bold text-gray-800 hover:text-gray-600">Wedding App</a>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#dashboard" class="text-gray-800 hover:text-gray-600">Dashboard</a>
+                    <a href="#gallery" class="text-gray-800 hover:text-gray-600">Gallery</a>
+                    <a href="#guest-list" class="text-gray-800 hover:text-gray-600">Guest List</a>
+                    <a href="#events" class="text-gray-800 hover:text-gray-600">Events</a>
+                    <a href="./profilepic.html" class="text-gray-800 hover:text-gray-600">Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="dashboard" class="bg-cover bg-center" style="background-image: url('https://example.com/your-image.jpg');">
+        <div class="container mx-auto px-6 py-24 text-center">
+            <h1 class="text-5xl font-bold text-gray-400 ">Welcome to Your Wedding Dashboard</h1>
+            <p class="text-xl text-gray-400 mt-4">Plan your perfect day with ease and elegance.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-gray-800 text-center">Gallery</h2>
+            <p class="text-center text-gray-600 mt-4">Capture the moments that matter.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://plus.unsplash.com/premium_photo-1675851210855-e7727076e829?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2VkZGluZyUyMGNvdXBsZXxlbnwwfHwwfHx8MA%3D%3D" alt="Wedding Photo" class="rounded">
+                    <h3 class="text-xl font-semibold text-gray-800 mt-4">Moment 1</h3>
+                    <p class="text-gray-600 mt-2">A brief description of this beautiful moment.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1715285977649-4a83c0820399?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Wedding Photo" class="rounded">
+                    <h3 class="text-xl font-semibold text-gray-800 mt-4">Moment 2</h3>
+                    <p class="text-gray-600 mt-2">Another memorable event captured.</p>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://images.unsplash.com/photo-1690202407412-26b8e18a2a64?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHdlZGRpbmclMjBjb3VwbGV8ZW58MHx8MHx8fDA%3D" alt="Wedding Photo" class="rounded">
+                    <h3 class="text-xl font-semibold text-gray-800 mt-4">Moment 3</h3>
+                    <p class="text-gray-600 mt-2">Cherishing the smiles and laughter.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guest List Section -->
+    <section id="guest-list" class="py-20 bg-gray-200">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-gray-800">Guest List</h2>
+            <p class="mt-4 text-gray-600">Manage your guest list effortlessly.</p>
+            <button class="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-500">Manage Guests</button>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-gray-800 text-center">Events</h2>
+            <p class="text-center text-gray-600 mt-4">Organize and track all your wedding events.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-800">Ceremony</h3>
+                    <p class="mt-4 text-gray-600">Details about the wedding ceremony.</p>
+                    <div class="imgs h-auto flex  mt-6 gap-2 overflow-hidden">
+                        <div class="img h-48 w-48  rounded-md bg-black ">
+                            <img class="h-full w-full object-cover" src="https://images.unsplash.com/photo-1634693343333-9b6013c30d57?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8aGFsZGklMjBjZXJlbW9ueSUyMHBpY3N8ZW58MHx8MHx8fDA%3D" alt="">
+                        </div>
+                        <div class="img h-48 w-48 rounded-md  bg-black">
+                            <img class="h-full w-full object-cover"  src="https://plus.unsplash.com/premium_photo-1670524465634-93cf255ffa8b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW5kaWFuJTIwbWVoZW5kaSUyMGNlcmVtb255JTIwYnJpZGUlMjBwaWN8ZW58MHx8MHx8fDA%3D" alt="">
+                        </div>
+                        <div class="img h-48 w-48 rounded-md  bg-black">
+                            <img   class="h-full w-full object-cover"  src="https://media.istockphoto.com/id/940217166/photo/exchange-of-wedding-rings-white.jpg?s=2048x2048&w=is&k=20&c=YJqJSXm-mhuJvG1lWQrmmP5qzy9Zpk1PU_FA45fYXYs=" alt="">
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300">
+                    <h3 class="text-2xl font-semibold text-gray-800">Reception</h3>
+                    <p class="mt-4 text-gray-600">Details about the wedding reception.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600">© 2024 Wedding App. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
