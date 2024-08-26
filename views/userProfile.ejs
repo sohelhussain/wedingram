@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding App - Client Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div>
+                    <a href="#" class="text-2xl font-bold text-gray-800 hover:text-gray-600">Wedding App</a>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="./profile.html" class="text-gray-800 hover:text-gray-600">Dashboard</a>
+                    <a href="#search" class="text-gray-800 hover:text-gray-600">Search</a>
+                    <a href="#matches" class="text-gray-800 hover:text-gray-600">Matches</a>
+                    <a href="#profile" class="text-gray-800 hover:text-gray-600">Profile</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- User Profile Section -->
+    <section id="profile" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col items-center">
+                <!-- Profile Header -->
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNhcmklMjBtb2RlbCUyMGluJTIwbGFuZHNjYXBlfGVufDB8fDB8fHww" alt="Profile Banner" class="w-full h-48 object-cover rounded-t-lg">
+                    <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-white p-4 rounded-lg shadow-lg border-4 border-white">
+                        <img src="https://plus.unsplash.com/premium_photo-1691030255129-34ba0257ebef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGluZGlhbiUyMG1vZGVsJTIwcGljc3xlbnwwfHwwfHx8MA%3D%3D" alt="Profile Picture" class="w-24 h-24 object-cover rounded-full border-4 border-gray-200">
+                    </div>
+                </div>
+                <!-- Profile Content -->
+                <div class="text-center mt-16">
+                    <h2 class="text-3xl font-bold text-gray-800">Jane Doe</h2>
+                    <p class="text-lg text-gray-600 mt-2">Looking for a life partner who shares my values and interests.</p>
+                    <div class="mt-6">
+                        <a href="#edit-profile" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-500 transition">Edit Profile</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Details -->
+            <div class="mt-16 max-w-4xl mx-auto">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-gray-800">Personal Information</h3>
+                    <div class="mt-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <p class="text-gray-700 font-semibold">Email:</p>
+                                <p class="text-gray-600">janedoe@example.com</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-semibold">Phone Number:</p>
+                                <p class="text-gray-600">(123) 456-7890</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-semibold">Address:</p>
+                                <p class="text-gray-600">456 Love Street, Romance City, CA</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-semibold">Date of Birth:</p>
+                                <p class="text-gray-600">March 15, 1990</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Preferences Section -->
+            <div class="mt-16 max-w-4xl mx-auto">
+                <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-gray-800">Partner Preferences</h3>
+                    <div class="mt-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <p class="text-gray-700 font-semibold">Looking For:</p>
+                                <p class="text-gray-600">Someone with similar interests and values.</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-semibold">Age Range:</p>
+                                <p class="text-gray-600">28 - 35 years old</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-semibold">Location:</p>
+                                <p class="text-gray-600">Within 50 miles</p>
+                            </div>
+                            <div>
+                                <p class="text-gray-700 font-semibold">Interests:</p>
+                                <p class="text-gray-600">Traveling, cooking, hiking</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-6">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600">© 2024 Wedding App. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

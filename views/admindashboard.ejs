@@ -1,0 +1,197 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script defer>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.getElementById('dashboardSection').style.display = 'none';
+            document.getElementById('usersSection').style.display = 'none';
+            document.getElementById('settingsSection').style.display = 'none';
+
+            // Show the selected section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        // Default to showing the dashboard section when the page loads
+        window.onload = function() {
+            showSection('dashboardSection');
+        };
+    </script>
+</head>
+<body class="bg-gray-100">
+
+    <!-- Sidebar -->
+    <div class="flex">
+        <aside class="w-64 bg-white h-screen shadow-md">
+            <div class="p-6">
+                <a href="#" class="text-2xl font-semibold text-gray-800">Admin Dashboard</a>
+            </div>
+            <nav class="mt-6">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#" onclick="showSection('dashboardSection')" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-200">
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showSection('usersSection')" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-200">
+                            <span>Users</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" onclick="showSection('settingsSection')" class="flex items-center px-4 py-2 text-gray-600 hover:bg-gray-200">
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <!-- Add more links as needed -->
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-8">
+            <!-- Dashboard Section -->
+            <section id="dashboardSection">
+                <header class="flex items-center justify-between mb-8">
+                    <h1 class="text-3xl font-semibold text-gray-800">Dashboard Overview</h1>
+                    <div>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add New</button>
+                    </div>
+                </header>
+
+                <!-- Dashboard Cards -->
+                <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h2 class="text-xl font-semibold text-gray-800">Total Users</h2>
+                        <p class="mt-2 text-gray-600">1,234</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h2 class="text-xl font-semibold text-gray-800">Active Cybers</h2>
+                        <p class="mt-2 text-gray-600">567</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h2 class="text-xl font-semibold text-gray-800">Total Revenue</h2>
+                        <p class="mt-2 text-gray-600">$12,345</p>
+                    </div>
+                </section>
+
+                <!-- Table -->
+                <section class="mt-8">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Recent Activities</h2>
+                    <div class="bg-white shadow rounded-lg overflow-x-auto">
+                        <table class="w-full whitespace-no-wrap">
+                            <thead class="bg-gray-200">
+                                <tr class="text-left text-gray-600 font-medium">
+                                    <th class="py-3 px-6">User</th>
+                                    <th class="py-3 px-6">Activity</th>
+                                    <th class="py-3 px-6">Date</th>
+                                    <th class="py-3 px-6">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-3 px-6">John Doe</td>
+                                    <td class="py-3 px-6">Logged in</td>
+                                    <td class="py-3 px-6">Aug 18, 2024</td>
+                                    <td class="py-3 px-6 text-green-500">Success</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-3 px-6">Jane Smith</td>
+                                    <td class="py-3 px-6">Updated profile</td>
+                                    <td class="py-3 px-6">Aug 18, 2024</td>
+                                    <td class="py-3 px-6 text-green-500">Success</td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Users Section -->
+            <section id="usersSection" style="display:none;">
+                <header class="flex items-center justify-between mb-8">
+                    <h1 class="text-3xl font-semibold text-gray-800">User Profiles</h1>
+                    <div>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add New User</button>
+                    </div>
+                </header>
+
+                <!-- Users Table -->
+                <section>
+                    <div class="bg-white shadow rounded-lg overflow-x-auto">
+                        <table class="w-full whitespace-no-wrap">
+                            <thead class="bg-gray-200">
+                                <tr class="text-left text-gray-600 font-medium">
+                                    <th class="py-3 px-6">Name</th>
+                                    <th class="py-3 px-6">Email</th>
+                                    <th class="py-3 px-6">Role</th>
+                                    <th class="py-3 px-6">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b">
+                                    <td class="py-3 px-6">John Doe</td>
+                                    <td class="py-3 px-6">johndoe@example.com</td>
+                                    <td class="py-3 px-6">Admin</td>
+                                    <td class="py-3 px-6 text-green-500">Active</td>
+                                </tr>
+                                <tr class="border-b">
+                                    <td class="py-3 px-6">Jane Smith</td>
+                                    <td class="py-3 px-6">janesmith@example.com</td>
+                                    <td class="py-3 px-6">Editor</td>
+                                    <td class="py-3 px-6 text-green-500">Active</td>
+                                </tr>
+                                <!-- Add more rows as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settingsSection" style="display:none;">
+                <header class="flex items-center justify-between mb-8">
+                    <h1 class="text-3xl font-semibold text-gray-800">Settings</h1>
+                    <div>
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Save Changes</button>
+                    </div>
+                </header>
+
+                <!-- Settings Form -->
+                <section>
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <form>
+                            <div class="mb-4">
+                                <label class="block text-gray-700">Email</label>
+                                <input type="email" class="w-full p-2 border border-gray-300 rounded" placeholder="admin@example.com">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700">Password</label>
+                                <input type="password" class="w-full p-2 border border-gray-300 rounded" placeholder="******">
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700">Notification Preferences</label>
+                                <select class="w-full p-2 border border-gray-300 rounded">
+                                    <option>Email</option>
+                                    <option>SMS</option>
+                                    <option>Push Notifications</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
