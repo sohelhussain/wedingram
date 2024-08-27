@@ -5,6 +5,9 @@ module.exports.userHomeController = (req, res) => {
 module.exports.searchBarController = (req, res) => {
   res.render("search");
 };
+module.exports.userProfileController = (req, res) => {
+  res.render("userProfile");
+};
 module.exports.searchController = async (req, res) => {
 //   let data = req.params.key;
 //   const userData = await userModel.find(
@@ -29,8 +32,8 @@ try {
    // Split the query by comma and trim whitespace
    const searchTerms = query.split(' ').map(term => term.trim());
 
-   // Create a filter object with $or condition
-   const filter = {
+   // Create a searchEngine object with $or condition
+   const searchEngine = {
      "$or": [
        { "district": { $in: searchTerms.map(term => new RegExp(term, 'i')) } },
        { "block": { $in: searchTerms.map(term => new RegExp(term, 'i')) } },
@@ -39,7 +42,7 @@ try {
      ]
    };
 
-   const userData = await userModel.find(filter);
+   const userData = await userModel.find(searchEngine);
    res.send(userData);
  } catch (error) {
    console.error(error);
