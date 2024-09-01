@@ -32,7 +32,9 @@ const cybercafeSchema = new Schema(
   },
   { timestamps: true }
 );
-function cybervalidate(data){
+
+
+function cybervalidate(data) {
   const cybercafeSchemaJoi = Joi.object({
     name: Joi.string().min(2).max(50).trim().required().messages({
       "string.base": "Name should be a type of 'text'",
@@ -62,32 +64,48 @@ function cybervalidate(data){
     shopRegistrationPhoto: Joi.array()
       .items(
         Joi.object({
-          buffer: Joi.binary().required(),
+          fieldname: Joi.string(),
+          originalname: Joi.string(),
+          encoding: Joi.string(),
           mimetype: Joi.string().required(),
+          buffer: Joi.binary().required(),
+          size: Joi.number()
         })
       )
       .allow(null),
     pancardPhoto: Joi.array()
       .items(
         Joi.object({
-          buffer: Joi.binary().required(),
+          fieldname: Joi.string(),
+          originalname: Joi.string(),
+          encoding: Joi.string(),
           mimetype: Joi.string().required(),
+          buffer: Joi.binary().required(),
+          size: Joi.number()
         })
       )
       .allow(null),
     adharcardPhoto: Joi.array()
       .items(
         Joi.object({
-          buffer: Joi.binary().required(),
+          fieldname: Joi.string(),
+          originalname: Joi.string(),
+          encoding: Joi.string(),
           mimetype: Joi.string().required(),
+          buffer: Joi.binary().required(),
+          size: Joi.number()
         })
       )
       .allow(null),
     passportSizePhoto: Joi.array()
       .items(
         Joi.object({
-          buffer: Joi.binary().required(),
+          fieldname: Joi.string(),
+          originalname: Joi.string(),
+          encoding: Joi.string(),
           mimetype: Joi.string().required(),
+          buffer: Joi.binary().required(),
+          size: Joi.number()
         })
       )
       .allow(null),
@@ -97,9 +115,11 @@ function cybervalidate(data){
         "string.pattern.base": "Invalid ObjectId format for createdBy",
       }),
   });
-  const {error} = cybercafeSchemaJoi.validate(data)
-  return error
+
+  const { error } = cybercafeSchemaJoi.validate(data);
+  return error;
 }
+
 
 
 

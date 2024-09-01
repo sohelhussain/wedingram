@@ -1,25 +1,24 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const {cyberModel, cyberValidator} = require("../models/cyberModel");
-const  sendMail  = require("../utils/nodeMailer");
+const { cyberModel, cyberValidator } = require("../models/cyberModel");
+const sendMail = require("../utils/nodeMailer");
 
 module.exports.postRegisterController = async (req, res) => {
   const { name, email, password } = req.body;
   const { shopRegistrationPhoto = [], pancardPhoto = [], adharcardPhoto = [], passportSizePhoto = [] } = req.files || {};
-console.log(req.files);
-console.log(req.body);
-
 
   try {
-        // Validate input data
-
-    const  error  = cyberValidator({ name, email, password, shopRegistrationPhoto, pancardPhoto, adharcardPhoto, passportSizePhoto });
+    // Validate input data
+    const error = cyberValidator({ name, email, password, shopRegistrationPhoto, pancardPhoto, adharcardPhoto, passportSizePhoto });
     if (error) {
       return res.status(400).json({ error: error.details[0].message });
     }
+
     // Check if the user already exists
-    let existingUser = await cyberModel.findOne({ email });
-    if (existingUser) return res.status(400).send("User already registered. Please log in.");
+    const existingUser = await cyberModel.findOne({ email });
+    if (existingUser) {
+      return res.status(400).json({ error: "User already registered. Please log in." });
+    }
 
     // Generate and send OTP
     const generatedOtp = Math.floor(100000 + Math.random() * 900000);
@@ -36,7 +35,9 @@ console.log(req.body);
     };
 
     await sendMail(mailOptions);
-    return res.status(200).json({ message: "OTP sent successfully. Please verify your email." });
+    // return res.status(200).json({ message: "OTP sent successfully. Please verify your email." });
+    return res.status(200).redirect('/verify');
+
   } catch (error) {
     console.error(error);
     return res.status(500).json({ error: "Error sending OTP. Please try again." });
@@ -46,10 +47,9 @@ console.log(req.body);
 module.exports.postRegisterOtpverification = async (req, res) => {
   const { otp } = req.body;
 
-
   try {
     // Validate OTP and session data
-    if (otp != req.session.otp || !req.session.email) {
+    if (!req.session.otp || otp != req.session.otp || !req.session.email) {
       return res.status(400).json({ error: "Invalid OTP or email mismatch. Please try again." });
     }
 
@@ -57,11 +57,11 @@ module.exports.postRegisterOtpverification = async (req, res) => {
     const { name, email, password, shopRegistrationPhoto, pancardPhoto, adharcardPhoto, passportSizePhoto } = req.session.userData;
 
     // Hash the password
-    let salt = await bcrypt.genSalt(10);
-    let hash = await bcrypt.hash(password, salt);
+    const salt = await bcrypt.genSalt(10);
+    const hash = await bcrypt.hash(password, salt);
 
     // Create a new cyber user
-    let newCyber = await cyberModel.create({
+    const newCyber = await cyberModel.create({
       name,
       email,
       password: hash,
@@ -76,21 +76,22 @@ module.exports.postRegisterOtpverification = async (req, res) => {
     });
 
     // Generate JWT token
-    let token = jwt.sign(
+    const token = jwt.sign(
       { id: newCyber._id, email: newCyber.email },
-      process.env.JWT_SECRET_KEY
+      process.env.JWT_SECRET_KEY,
+      { expiresIn: '1d' } // Token will expire in 1 day
     );
 
     // Set the token in the cookie
-    res.cookie("token", token, { httpOnly: true });
+    res.cookie("token", token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
 
     // Clear session data
     req.session.destroy();
 
     return res.status(201).json({ message: "User created successfully." });
+    // return res.status(201).redirect('')
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
-

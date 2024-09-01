@@ -15,7 +15,7 @@
   },
   "name": "wedingram",
   "version": "1.0.0",
-  "description": "this is a readme file",
+  "description": "this app are easy to merriage",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",

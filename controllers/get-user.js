@@ -8,6 +8,9 @@ module.exports.searchBarController = (req, res) => {
 module.exports.userProfileController = (req, res) => {
   res.render("userProfile");
 };
+module.exports.userFeedController = (req, res) => {
+  res.render("userfeed");
+};
 module.exports.searchController = async (req, res) => {
 //   let data = req.params.key;
 //   const userData = await userModel.find(

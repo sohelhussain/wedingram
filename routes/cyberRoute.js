@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const { cyberController , verifyController} = require("../controllers/get-cyber");
+const { cyberController , verifyController, cyberUserController} = require("../controllers/get-cyber");
 const { postRegisterController, postRegisterOtpverification } = require("../controllers/post-cyber");
 const upload = require("../config/multer-config")
 
 router.get("/", cyberController);
 router.get("/verify", verifyController);
+router.get("/cyberuser", cyberUserController);
 
 //! post routes
 
