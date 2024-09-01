@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Page - Wedding Partner Search</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+    <!-- Main Container -->
+    <div class="flex h-screen">
+        
+        <!-- Sidebar -->
+        <aside class="w-1/4 bg-gray-200 p-4">
+            <ul class="space-y-4">
+                <li class="p-2 hover:bg-gray-300 rounded cursor-pointer font-semibold text-gray-700">Register User</li>
+                <li class="p-2 hover:bg-gray-300 rounded cursor-pointer font-semibold text-gray-700">Update Profile</li>
+                <li class="p-2 hover:bg-gray-300 rounded cursor-pointer font-semibold text-gray-700">Open Profile</li>
+                <li class="p-2 hover:bg-gray-300 rounded cursor-pointer font-semibold text-gray-700">Delete Profile</li>
+            </ul>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="w-3/4 h-screen p-6 relative">
+            <div class="registercard h-4/6 w-2/6 bg-red-200 rounded-lg ml-52 mt-24 shadow-lg">
+                <h1 class="text-3xl font-bold text-center text-gray-800 mt-4">Register</h1>
+                <form class="flex flex-col gap-4 items-center justify-center mt-6" action="">
+                    <input class="w-4/5 p-2 rounded outline-none border-2 border-blue-300 focus:border-blue-500" type="text" placeholder="Enter your name" name="name">
+                    <input class="w-4/5 p-2 rounded outline-none border-2 border-blue-300 focus:border-blue-500" type="text" placeholder="Enter your email" name="email">
+                    <input class="w-4/5 p-2 rounded outline-none border-2 border-blue-300 focus:border-blue-500" type="text" placeholder="Enter your address" name="address">
+                    <input class="w-4/5 p-2 rounded outline-none border-2 border-blue-300 focus:border-blue-500" type="password" placeholder="Password" name="password">
+                    <input class="w-4/5 p-2 rounded outline-none border-2 border-blue-300 focus:border-blue-500" type="phone" placeholder="Enter your number" name="number">
+                    <input class="py-2 px-6 rounded bg-blue-500 text-white cursor-pointer hover:bg-blue-600 mt-4 transition duration-200" type="submit">
+                </form>
+            </div>
+
+            <!-- Display Picture -->
+            <div class="dp absolute top-4 right-4 h-16 w-16 rounded-full overflow-hidden bg-blue-500 shadow-md">
+                <img src="https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bW9kZWx8ZW58MHx8MHx8fDA%3D" alt="Profile Picture" class="h-full w-full object-cover">
+            </div>
+        </main> 
+    </div>
+
+</body>
+</html>
