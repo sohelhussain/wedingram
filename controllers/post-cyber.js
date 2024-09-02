@@ -36,7 +36,7 @@ module.exports.postRegisterController = async (req, res) => {
 
     await sendMail(mailOptions);
     // return res.status(200).json({ message: "OTP sent successfully. Please verify your email." });
-    return res.status(200).redirect('/verify');
+    return res.redirect('/cyber/verify');
 
   } catch (error) {
     console.error(error);
@@ -88,8 +88,8 @@ module.exports.postRegisterOtpverification = async (req, res) => {
     // Clear session data
     req.session.destroy();
 
-    return res.status(201).json({ message: "User created successfully." });
-    // return res.status(201).redirect('')
+    // return res.status(201).json({ message: "User created successfully." });
+    return res.redirect('/cyber/cyberuser')
   } catch (err) {
     console.error(err);
     res.status(500).json({ error: "Internal Server Error" });
