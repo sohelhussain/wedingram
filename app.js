@@ -36,6 +36,11 @@ app.use("/user", userRouter);
 app.use("/cyber", cyberRouter);
 app.use("/admin", adminRouter);
 
+// app.get('*', (req, res) => {
+//   res.render('routenot');
+// });
+
+
 app.listen(PORT, () => {
   console.log(`this port is listening on ${PORT}`);
 });
