@@ -14,10 +14,10 @@
         <!-- Content Area -->
         <main class="w-full h-screen p-6">
             <!-- Search Bar -->
-            <div class="flex items-center justify-between mb-4">
+            <form action="/user/search" method="get" class="flex items-center justify-between mb-4">
                 <input class="w-full p-2 border-2 border-gray-300 rounded-full focus:outline-none focus:border-blue-500" type="text" placeholder="Search...">
-                <button class="ml-4 py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600">Matches</button>
-            </div>
+                <input class="ml-4 py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600" type="submit" value="search">
+            </form>
 
             <!-- Grid Layout -->
             <div class="grid grid-cols-4 gap-6">
