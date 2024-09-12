@@ -1,4 +1,12 @@
 const userModel = require("../models/userModel");
+
+
+module.exports.pageNotFound = (req, res) => {
+  res.send('404 page not found');
+}
+
+
+
 module.exports.userHomeController = (req, res) => {
   res.render("user");
 };
@@ -25,17 +33,18 @@ module.exports.searchController = async (req, res) => {
 //   );
 //   res.send(userData);
 
+console.log('fun');
 try {
+  console.log('fun');
    const { query } = req.query;
+   console.log(req.query);
    
    if (!query) {
      return res.status(400).send({ error: 'No search terms provided' });
    }
 
-   // Split the query by comma and trim whitespace
    const searchTerms = query.split(' ').map(term => term.trim());
 
-   // Create a searchEngine object with $or condition
    const searchEngine = {
      "$or": [
        { "district": { $in: searchTerms.map(term => new RegExp(term, 'i')) } },
@@ -44,7 +53,7 @@ try {
        { "village": { $in: searchTerms.map(term => new RegExp(term, 'i')) } }
      ]
    };
-
+   console.log('run');
    const userData = await userModel.find(searchEngine);
    res.send(userData);
  } catch (error) {
