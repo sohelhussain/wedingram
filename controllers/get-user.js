@@ -16,48 +16,60 @@ module.exports.searchBarController = (req, res) => {
 module.exports.userProfileController = (req, res) => {
   res.render("userProfile");
 };
-module.exports.userFeedController = (req, res) => {
-  res.render("userfeed");
+
+
+
+module.exports.userFeedController = async (req, res) => {
+    try {
+        // Fetch all users
+        const users = await userModel.find({});
+
+        // Render user feed page with user data
+        res.render("userfeed", { users });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
 };
+
 module.exports.searchController = async (req, res) => {
-//   let data = req.params.key;
-//   const userData = await userModel.find(
-//    {
-//       "$or":[
-//          {"district":{$regex:data}},
-//          {"block":{$regex:data}},
-//          {"panchayt":{$regex:data}},
-//          {"village":{$regex:data}},
-//       ]
-//    }
-//   );
-//   res.send(userData);
+    try {
+        const { query } = req.query;
 
-console.log('fun');
-try {
-  console.log('fun');
-   const { query } = req.query;
-   console.log(req.query);
-   
-   if (!query) {
-     return res.status(400).send({ error: 'No search terms provided' });
-   }
+        if (!query) {
+            return res.status(400).json({ error: 'No search terms provided' });
+        }
 
-   const searchTerms = query.split(' ').map(term => term.trim());
+        // Split the search query into individual terms
+        const searchTerms = query.split(' ').map(term => term.trim());
 
-   const searchEngine = {
-     "$or": [
-       { "district": { $in: searchTerms.map(term => new RegExp(term, 'i')) } },
-       { "block": { $in: searchTerms.map(term => new RegExp(term, 'i')) } },
-       { "panchayt": { $in: searchTerms.map(term => new RegExp(term, 'i')) } },
-       { "village": { $in: searchTerms.map(term => new RegExp(term, 'i')) } }
-     ]
-   };
-   console.log('run');
-   const userData = await userModel.find(searchEngine);
-   res.send(userData);
- } catch (error) {
-   console.error(error);
-   res.status(500).send({ error: 'Server error' });
- }
+        // Build the search pipeline using MongoDB aggregation
+        const searchEngine = [
+            {
+                $match: {
+                    $or: [
+                        { "district": { $in: searchTerms.map(term => new RegExp(term, 'i')) } },
+                        { "block": { $in: searchTerms.map(term => new RegExp(term, 'i')) } },
+                        { "panchayat": { $in: searchTerms.map(term => new RegExp(term, 'i')) } },
+                        { "village": { $in: searchTerms.map(term => new RegExp(term, 'i')) } }
+                    ]
+                }
+            },
+            {
+                $project: {
+                    district: 1,
+                    block: 1,
+                    panchayat: 1,
+                    village: 1
+                }
+            }
+        ];
+
+        // Perform the aggregation query
+        const userData = await userModel.aggregate(searchEngine);
+        res.json(userData);
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: 'Server error' });
+    }
 };
