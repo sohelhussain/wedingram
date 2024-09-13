@@ -2,10 +2,8 @@ const userModel = require("../models/userModel");
 
 
 module.exports.pageNotFound = (req, res) => {
-  res.send('404 page not found');
+    res.send('404 Not Found');
 }
-
-
 
 module.exports.userHomeController = (req, res) => {
   res.render("user");
