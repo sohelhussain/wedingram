@@ -13,6 +13,7 @@ router.get('/search', searchController)
 router.get('/searchshow',searchBarController)
 router.get('/profile',userProfileController)
 router.get('/userfeed',userFeedController)
+router.get('/pagenotfound',pageNotFound)
 
 
 

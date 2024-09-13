@@ -7,34 +7,14 @@ module.exports.userCreateController = async (req, res) => {
     try {
         let {
             firstName,
-            lastName,
-            gender,
-            lookingFor,
-            dob,
-            category,
-            education,
-            country,
-            state,
-            city,
             phoneNumber,
             email,
-            age,
-            maritalStatus,
-            district,
+            password,
             block,
-            panchayt,
-            village,
-            fathersName,
-            mothersName,
-            disability,
-            hobbies,
-            caste,
-            diet,
-            complexion,
-            drink,
-            smoke,
-            height,
-            password
+            panchayat,
+            district,
+            village
+            
         } = req.body;
 
         let user = await userModel.findOne({ email: email });
@@ -47,34 +27,14 @@ module.exports.userCreateController = async (req, res) => {
         req.session.email = email;
         req.session.userData = {
             firstName,
-            lastName,
-            gender,
-            lookingFor,
-            dob,
-            category,
-            education,
-            country,
-            state,
-            city,
             phoneNumber,
             email,
-            age,
-            maritalStatus,
-            district,
             block,
-            panchayt,
+            password,
+            panchayat,
+            district,
             village,
-            fathersName,
-            mothersName,
-            disability,
-            hobbies,
-            caste,
-            diet,
-            complexion,
-            drink,
-            smoke,
-            height,
-            password
+
         };
 
         // Send OTP via email
@@ -104,34 +64,13 @@ module.exports.userCreateOtpVerification = async (req, res) => {
         // Retrieve user data from session
         const {
             firstName,
-            lastName,
-            gender,
-            lookingFor,
-            dob,
-            category,
-            education,
-            country,
-            state,
-            city,
             phoneNumber,
             email,
-            age,
-            maritalStatus,
-            district,
+            password,
             block,
-            panchayt,
+            panchayat,
             village,
-            fathersName,
-            mothersName,
-            disability,
-            hobbies,
-            caste,
-            diet,
-            complexion,
-            drink,
-            smoke,
-            height,
-            password
+            district,
         } = req.session.userData;
 
         // Hash the password
@@ -141,39 +80,18 @@ module.exports.userCreateOtpVerification = async (req, res) => {
         // Create a new user
         let newUser = await userModel.create({
             firstName,
-            lastName,
-            gender,
-            lookingFor,
-            dob,
-            category,
-            education,
-            country,
-            state,
-            city,
             phoneNumber,
             email,
-            age,
-            maritalStatus,
-            district,
-            block,
-            panchayt,
+            password: hash,
+            panchayat,
             village,
-            fathersName,
-            mothersName,
-            disability,
-            hobbies,
-            caste,
-            diet,
-            complexion,
-            drink,
-            smoke,
-            height,
-            password: hash
+            block,
+            district,
         });
 
         // Generate JWT token
         let token = generateToken(newUser);
-        res.cookie("token", token, { httpOnly: true });
+        res.cookie("token", token);
 
         // Clear session data
         req.session.destroy();
