@@ -21,8 +21,9 @@ router.post("/usercreate", userCreateController);
 router.post("/usercreate/otpverify", userCreateOtpVerification);
 
 
+router.get('*', pageNotFound)
 
 
-// router.use('*', pageNotFound)
+
 
 module.exports = router;
