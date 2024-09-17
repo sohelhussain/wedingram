@@ -91,7 +91,7 @@ module.exports.userCreateOtpVerification = async (req, res) => {
 
         // Generate JWT token
         let token = generateToken(newUser);
-        res.cookie("token", token);
+        res.cookie("userToken", token);
 
         // Clear session data
         req.session.destroy();

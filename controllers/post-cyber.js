@@ -77,13 +77,13 @@ module.exports.postRegisterOtpverification = async (req, res) => {
 
     // Generate JWT token
     const token = jwt.sign(
-      { id: newCyber._id, email: newCyber.email },
+      { id: newCyber._id, email: newCyber.email, cyber: true },
       process.env.JWT_SECRET_KEY,
       { expiresIn: '1d' } // Token will expire in 1 day
     );
 
     // Set the token in the cookie
-    res.cookie("token", token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
+    res.cookie("cybreToken", token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' });
 
     // Clear session data
     req.session.destroy();

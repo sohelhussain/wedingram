@@ -16,6 +16,7 @@ const cybercafeSchema = new Schema(
         /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
         "Please fill a valid email address",
       ],
+      role: { type: String, required: true, enum: ['cyber'], default: 'cyber' },
     },
   password: { type: String, required: true, select: false },
   shopRegistrationPhoto: { type: Buffer, default: "" },
