@@ -35,6 +35,7 @@ app.use("/", indexRouter);
 app.use("/user", userRouter);
 app.use("/cyber", cyberRouter);
 app.use("/admin", adminRouter);
+
 app.use('*', (req, res) => {
   res.status(404).render("404", { title: "Page Not Found" });
 });
