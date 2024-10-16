@@ -9,7 +9,7 @@ const userRouter = require("./routes/userRoute")
 const path = require("path");
 const expressSession = require("express-session");
 const flash = require("connect-flash");
-const PORT = process.env.PORT || 3000; // Use the port from environment variables or default to 3000
+const PORT = process.env.PORT || 8000; // Use the port from environment variables or default to 3000
 
 require("./config/mongodb-connection");
 
