@@ -103,3 +103,27 @@ module.exports.userCreateOtpVerification = async (req, res) => {
     }
 };
 
+module.exports.userLoginController = async (req, res) => {
+    const user = await userModel.findOne({ email: req.body.email });
+
+    if (!user) {
+        return res.status(401).json({ error: "Invalid email or password." });
+    }
+
+    const isMatch = await bcrypt.compare(req.body.password, user.password);
+
+    if (!isMatch) {
+        return res.status(401).json({ error: "Invalid email or password." });
+    }
+
+    const token = generateToken(user);
+    res.cookie("userToken", token);
+
+    return res.status(200).json({ message: "Login successful.", user });
+}
+
+module.exports.userLogoutController = async (req, res) => {
+    req.session.destroy();
+    res.clearCookie("userToken");
+    return res.status(200).json({ message: "Logout successful." });
+};

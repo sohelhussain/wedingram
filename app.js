@@ -16,6 +16,11 @@ require("./config/mongodb-connection");
 // Set the view engine to EJS
 app.set("view engine", "ejs");
 
+//logger
+const logger = require("morgan");
+app.use(logger("short"));  
+
+
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, "public")));
 
