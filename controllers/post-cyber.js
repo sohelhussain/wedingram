@@ -97,26 +97,26 @@ module.exports.postRegisterOtpverification = async (req, res) => {
 };
 
 module.exports.cyberLoginController = async (req, res) => {
-    const user = await userModel.findOne({ email: req.body.email });
+    const cyber = await cyberModel.findOne({ email: req.body.email });
 
-    if (!user) {
+    if (!cyber) {
         return res.status(401).json({ error: "Invalid email or password." });
     }
 
-    const isMatch = await bcrypt.compare(req.body.password, user.password);
+    const isMatch = await bcrypt.compare(req.body.password, cyber.password);
 
     if (!isMatch) {
         return res.status(401).json({ error: "Invalid email or password." });
     }
 
-    const token = generateToken(user);
-    res.cookie("userToken", token);
+    const token = generateToken(cyber);
+    res.cookie("cyberToken", token);
 
     return res.status(200).json({ message: "Login successful.", user });
 }
 
 module.exports.cyberLogoutController = async (req, res) => {
     req.session.destroy();
-    res.clearCookie("userToken");
+    res.clearCookie("cyberToken");
     return res.status(200).json({ message: "Logout successful." });
 }
