@@ -4,4 +4,8 @@ const generateToken = (user) =>{
    return jwt.sign({email: user.email, id:user._id, user: true } ,  process.env.JWT_SECRET_KEY);
 }
 
-module.exports = generateToken;
+const generateTokenForCyber = (cyber) =>{
+    return jwt.sign({id: cyber._id, email: cyber.email, cyber: true } ,  process.env.JWT_SECRET_KEY);
+}
+
+module.exports = {generateToken, generateTokenForCyber};

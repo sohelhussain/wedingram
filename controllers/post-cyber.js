@@ -2,6 +2,9 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { cyberModel, cyberValidator } = require("../models/cyberModel");
 const sendMail = require("../utils/nodeMailer");
+const {generateTokenForCyber} = require("../utils/generateToken");
+
+
 
 module.exports.postRegisterController = async (req, res) => {
   const { name, email, password } = req.body;
@@ -97,7 +100,7 @@ module.exports.postRegisterOtpverification = async (req, res) => {
 };
 
 module.exports.cyberLoginController = async (req, res) => {
-    const cyber = await cyberModel.findOne({ email: req.body.email });
+    const cyber = await cyberModel.findOne({ email: req.body.email }).select("+password");
 
     if (!cyber) {
         return res.status(401).json({ error: "Invalid email or password." });
@@ -109,10 +112,10 @@ module.exports.cyberLoginController = async (req, res) => {
         return res.status(401).json({ error: "Invalid email or password." });
     }
 
-    const token = generateToken(cyber);
+    const token = generateTokenForCyber(cyber);
     res.cookie("cyberToken", token);
 
-    return res.status(200).json({ message: "Login successful.", user });
+    return res.status(200).json({ message: "Login successful.", cyber });
 }
 
 module.exports.cyberLogoutController = async (req, res) => {

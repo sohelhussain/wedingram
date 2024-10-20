@@ -1,6 +1,6 @@
 const userModel = require("../models/userModel");
 const bcrypt = require("bcrypt");
-const generateToken = require("../utils/generateToken");
+const {generateToken} = require("../utils/generateToken");
 const sendMail = require("../utils/nodeMailer");
 
 module.exports.userCreateController = async (req, res) => {
