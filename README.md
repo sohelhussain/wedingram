@@ -1,2 +1,2 @@
-<h4>The Wedingram App</h4>
+<h1>The Wedingram App</h1>
 
