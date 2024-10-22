@@ -5,7 +5,6 @@ const app = express();
 const indexRouter = require("./routes/indexRoute");
 const cyberRouter = require("./routes/cyberRoute");
 const adminRouter = require("./routes/adminRoute");
-const userRouter = require("./routes/userRoute")
 const path = require("path");
 const expressSession = require("express-session");
 const flash = require("connect-flash");
@@ -37,7 +36,6 @@ app.use(
 app.use(flash());
 
 app.use("/", indexRouter);
-app.use("/user", userRouter);
 app.use("/cyber", cyberRouter);
 app.use("/admin", adminRouter);
 
