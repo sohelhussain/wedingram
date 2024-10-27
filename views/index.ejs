@@ -1,122 +1,195 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wedding App</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body  >
+    <div id="main  ">
 
-    <!-- Navbar -->
-    <nav class="bg-white shadow">
-        <div class="container mx-auto px-6 py-3">
-            <div class="flex justify-between items-center">
-                <div>
-                    <a href="#home" class="text-xl font-bold text-gray-800 hover:text-gray-600">Wedding App</a>
+      <header class=" bg-[#580B25] w-[100vw] flex justify-between items-center py-2 px-6">
+        <div class="flex items-center space-x-3">
+          <img
+            src="./IMG_20240821_162417-removebg-preview.png"
+            alt="Logo"
+            class="h-28 ml-10"
+          />
+        </div>
+        <nav class="space-x-7 text-lg ml-14">
+          <a href="#" class="hover:text-pink-300">Home</a>
+          <a href="#" class="hover:text-pink-300">Events</a>
+          <a href="#" class="hover:text-pink-300">Gallery</a>
+          <a href="#" class="hover:text-pink-300">About</a>
+          <a href="#" class="hover:text-pink-300">Find me</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+          <button class="h-9 w-16 bg-white text-[#660F2D] rounded-md">
+            login
+          </button>
+          <button class="h-9 w-16 bg-white text-[#660F2D] rounded-md">
+            signup
+          </button>
+        </div>
+      </header>
+  
+      <!-- Hero Section -->
+      <section
+        class="relative w-[100vw] bg-[#580B25] h-[85vh] flex flex-col justify-center items-center text-center px-10"
+      >
+        <div
+          class="absolute inset-0 bg-cover bg-center"
+          style="background-image: url('background-image.jpg')"
+        ></div>
+  
+        <!-- Overlay for dark background -->
+        <div class="absolute inset-0 bg-[#580B25] opacity-80"></div>
+  
+        <!-- Content (text and image) -->
+        <div
+          class="relative z-10 flex items-center justify-between max-w-6xl ml-44 mt-16"
+        >
+          <!-- Left Section (Image) -->
+          <div class="flex-1">
+            <img src="" alt="Couple Image" class="w-50" />
+          </div>
+  
+          <!-- Right Section (Text) -->
+          <div class="flex-1 text-white space-y-5 ml-44">
+            <h1 class="text-4xl lg:text-5xl font-light leading-tight">
+              Perfect Weddings <br />
+              Made Easy!!!
+            </h1>
+            <p class="text-lg lg:text-xl">
+              Lorem ipsum dolor sit amet consectetur. Ut orci viverra ornare
+              condimentum porttitor quis tempus non. Vel nec sapien euismod.
+            </p>
+            <a
+              href="#"
+              class="inline-block border-[1px] text-white font-semibold py-3 px-8 rounded-full hover:bg-pink-700"
+            >
+              CONTACT US
+            </a>
+          </div>
+        </div>
+      </section>
+  
+      <div class="page21 h-[100vh] flex bg-[#FFFFFF]">
+        <div class="page21-1 h-[100vh] w-[42vw] text-[#580B25]">
+          <div class="page21-div h-16 w-[35vw] bg-[#580B25] mt-16"></div>
+          <h6 class="text-[#580B25] mt-20 ml-96 text-2xl">We do With</h6>
+          <h1 class="text-8xl ml-48">Passion</h1>
+          <p class="px-2 w-80 mt-2 ml-48 text-[red]">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum
+            asperiores libero nostrum distinctio? Labore, vitae.
+          </p>
+          <button
+            class="h-12 w-56 border-[2px] border-red-100 mt-5 ml-48 rounded-full"
+          >
+            Learn More
+          </button>
+          <div
+            class="page21-div h-16 w-[45vw] mt-16 ml-52 bg-[#580B25] absolute"
+          ></div>
+        </div>
+  
+        <div class="page21-2 h-[100vh] w-[50vw] bg-[#FFFFFF] flex">
+          <div class="page21-2 h-[100vh] w-[28vw]">
+            <div class="div1">
+              <img
+                src="./711fac850e0b5bec2ae25fc1ab503b703dd1be30dc142c30409c84c5cb279b46.jpg"
+                alt=""
+                class="py-10 rounded-ss-[100px]"
+              />
+            </div>
+            <div class="div2">
+              <img
+                src="./94057-144531255-2879582352326404-372421048793887669-n.jpeg"
+                alt=""
+                class="h-[55vh] absolute ml-20 rounded-ee-[50px]"
+              />
+            </div>
+          </div>
+          <div class="page21-2-2">
+              <img src="./images.jpg" alt="" class="h-[75vh] mt-16 ml-20 rounded-se-[100px]">
+          </div>
+        </div>
+      </div>
+  
+  
+      <div class="page2 h-screen w-full bg-[#FFFFFF] ">
+        <div class="textcontainer flex items-center justify-center mt-12 flex-col gap-1 text-center">
+            <h1 class="font-bold text-7xl text-[#65102C]">Includes some of </h1>
+        <h1 class="font-bold text-7xl text-[#65102C] ">users</h1>
+        <p class="text-xl text-[#FF725E]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Id quisquam quasi sapiente neque aperiam velit recusandae eius ea, dolor illo!
+        </p>
+        <div class="imgcontainer flex flex-col items-center justify-center gap-5 mt-12">
+            <div class="imgcontainertop flex items-center justify-center gap-3">
+                <div class="imgtopleft h-[18vw] w-[25vw] bg-red-500 rounded-es-[10vw] overflow-hidden">
+  
+                    <img class="h-full w-full object-cover" src="https://plus.unsplash.com/premium_photo-1691030256206-b7398c8bfc49?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW5kaWFuJTIwd2VkZGluZyUyMG1vZGVscyUyMHBob3RlfGVufDB8fDB8fHww" alt="">
                 </div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="text-gray-800 hover:text-gray-600">Home</a>
-                    <a href="#about" class="text-gray-800 hover:text-gray-600">About</a>
-                    <a href="#features" class="text-gray-800 hover:text-gray-600">Features</a>
-                    <a href="#contact" class="text-gray-800 hover:text-gray-600">Contact</a>
-                    <button id="loginBtn" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition">Login</button>
-                    <button id="registerBtn" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition">Register</button>
+                <div class="imgtopright h-[18vw] w-[25vw] bg-red-500  rounded-ee-[10vw] overflow-hidden">
+                    <img class="h-full w-full object-cover" src="https://plus.unsplash.com/premium_photo-1724762183473-5e79760ca3d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW5kaWFuJTIwd2VkZGluZyUyMG1vZGVscyUyMHBob3RlfGVufDB8fDB8fHww" alt="">
                 </div>
             </div>
-        </div>
-    </nav>
-
-    <!-- Home Section -->
-    <section id="home" class="bg-white py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800">Welcome to Wedding App</h2>
-            <p class="mt-4 text-gray-600">Plan your wedding effortlessly and beautifully.</p>
-            <button class="mt-6 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-500">Get Started</button>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="bg-gray-200 py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800">About Us</h2>
-            <p class="mt-4 text-gray-600">We provide all the tools you need to make your wedding planning smooth and joyful.</p>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="bg-white py-20">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                    <h3 class="text-2xl font-semibold text-gray-800">Feature One</h3>
-                    <p class="mt-4 text-gray-600">Description of feature one.</p>
+            <div class="imgcontainerbtm flex items-center justify-center gap-3">
+                <div class="imgbtmleft h-[18vw] w-[25vw] bg-red-500 rounded-ss-[10vw] overflow-hidden">
+                    <img class="h-full w-full object-cover" src="https://plus.unsplash.com/premium_photo-1691030256235-47d75d5890b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGluZGlhbiUyMHdlZGRpbmclMjBtb2RlbHMlMjBwaG90ZXxlbnwwfHwwfHx8MA%3D%3D" alt="">
                 </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                    <h3 class="text-2xl font-semibold text-gray-800">Feature Two</h3>
-                    <p class="mt-4 text-gray-600">Description of feature two.</p>
-                </div>
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md text-center">
-                    <h3 class="text-2xl font-semibold text-gray-800">Feature Three</h3>
-                    <p class="mt-4 text-gray-600">Description of feature three.</p>
+                <div class="imgbtmright h-[18vw] w-[25vw] bg-red-500 rounded-se-[10vw] overflow-hidden">
+                    <img class="h-full w-full object-cover " src="https://plus.unsplash.com/premium_photo-1691030255934-45db499c25b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D" alt="">
                 </div>
             </div>
+         
         </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="bg-gray-200 py-20">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold text-gray-800">Get in Touch</h2>
-            <p class="mt-4 text-gray-600">We would love to hear from you! Please reach out for any queries or further information.</p>
-            <form class="mt-8 max-w-md mx-auto">
-                <input class="w-full p-3 rounded-lg shadow-md mb-4" type="text" placeholder="Your Name">
-                <input class="w-full p-3 rounded-lg shadow-md mb-4" type="email" placeholder="Your Email">
-                <textarea class="w-full p-3 rounded-lg shadow-md mb-4" placeholder="Your Message" rows="4"></textarea>
-                <button class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-500">Send Message</button>
-            </form>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-white py-6">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-gray-600">© 2024 Wedding App. All rights reserved.</p>
+  
+  
+      </div>
+  
+  
+      <div class="page3 h-[50vw] w-full flex items-center relative justify-center gap-1">
+            
+  
+        <div class="text3container flex flex-col gap-4  relative ml-[-35vw] mt-[10vw]">
+            <h1 class="text-7xl text-[#65102C]">Unforgottable</h1>
+            <h1 class="text-7xl text-[#65102C]">Wedding Program</h1>
+            <p class="text-xl text-[#FF725E]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Itaque quasi minus, dicta qui blanditiis libero.</p>
         </div>
-    </footer>
-
-    <!-- Modal (hidden by default) -->
-    <div id="authModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-        <div class="bg-white p-8 rounded-lg w-80">
-            <h3 id="modalTitle" class="text-xl font-semibold mb-4">Sign In</h3>
-            <input type="text" placeholder="Email" class="border border-gray-300 p-2 w-full mb-4">
-            <input type="password" placeholder="Password" class="border border-gray-300 p-2 w-full mb-4">
-            <button class="bg-blue-600 text-white px-4 py-2 rounded w-full hover:bg-blue-700 transition">Submit</button>
-            <button id="closeModal" class="mt-4 text-blue-600 hover:text-blue-800 transition">Cancel</button>
+        
+        <div class="text3strip1 mt-10 h-[4vw] w-[60vw] top-[10vw] bg-[#65102C] left-[40vw] absolute"></div>
+        <div class="text3strip2 mt-10 h-[30vw] w-[10vw] top-[10vw] bg-[#65102C] left-[90vw] absolute"></div>
+        <div class="text3strip3 mt-10 h-[10vw] w-[30vw] top-[20vw] bg-[#65102C] left-[60vw] absolute"></div>
+  
+  
+      </div>
+  
+       <div class="page4 h-[50vw] w-[100vw] bg-[#65102C] flex gap-[5vw] items-center justify-around">
+  
+        <div class="text4container">
+            <h1 class="text-7xl text-white">How to connect </h1>
+            <h1 class="text-7xl text-white">with peoples</h1>
+            <p class="mt-4 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Explicabo dolores necessitatibus molestias a  <br>sunt vitae.</p>
+            <button class="border-2 border-white mt-3  text-white px-4 py-2 mt-2 rounded-[50px]"> Let's try</button>
         </div>
+        <div class="coupleimg h-[40vw] mt-[-6vw] w-[25vw]">
+            <img class="object-cover h-full w-full" src="./bgremovecouple.png" alt="">
+        </div>
+       </div>
+  
+  
+       <div class="footer h-[50vh] w-[100vw] flex items-center justify-center">
+        <div class="footercontainer h-[80%] w-full bg-[#3F0015] mt-24 rounded-ss-[20vw] rounded-se-[20vw]">
+  
+        </div>
+       </div>
     </div>
+    <!-- Navbar Section -->
+    
 
-    <script>
-        const loginBtn = document.getElementById('loginBtn');
-        const registerBtn = document.getElementById('registerBtn');
-        const authModal = document.getElementById('authModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const closeModal = document.getElementById('closeModal');
 
-        loginBtn.addEventListener('click', () => {
-            modalTitle.textContent = 'Sign In';
-            authModal.classList.remove('hidden');
-        });
-
-        registerBtn.addEventListener('click', () => {
-            modalTitle.textContent = 'Register';
-            authModal.classList.remove('hidden');
-        });
-
-        closeModal.addEventListener('click', () => {
-            authModal.classList.add('hidden');
-        });
-    </script>
-</body>
+     
+  </body>
 </html>

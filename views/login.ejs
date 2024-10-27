@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Login Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex items-center justify-center ">
+        <!-- Container -->
+        <div class="bg-white shadow-lg rounded-l-[80px]  rounded-r-[80px] flex flex-col lg:flex-row w-full lg:max-w-4xl mx-4 lg:mx-auto">
+            <!-- Left Side (Welcome Section) -->
+            <div class="bg-[#580B25] rounded-l-[80px]  text-white p-8 lg:w-1/2 flex flex-col justify-center items-center ">
+                <img class="h-72" src="./IMG_20240821_162417-removebg-preview.png" alt="">
+                <p class="text-xl mb-6">Welcome to one of the finest online institutions for authentic knowledge of life value and fundamental concepts of Islam.</p>
+                <p class="mb-6">Log in to introduce yourself with the ocean of knowledge and endless possibilities.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-white hover:text-gray-300">
+                        <i class="fab fa-facebook-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-gray-300">
+                        <i class="fab fa-twitter-square text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-white hover:text-gray-300">
+                        <i class="fab fa-youtube-square text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Side (Login Form) -->
+            <div class="bg-gray-50 p-8 rounded-r-[80px] lg:w-1/2">
+                <h2 class="text-2xl font-semibold mb-4">Welcome to our Virtual Campus</h2>
+                <form action="#">
+                    <div class="mb-4">
+                        <label for="username" class="block text-gray-700">Username or Email</label>
+                        <input type="text" id="username" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-red-600" placeholder="Enter your username or email">
+                    </div>
+                    <div class="mb-4">
+                        <label for="password" class="block text-gray-700">Password</label>
+                        <input type="password" id="password" class="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-red-600" placeholder="Enter your password">
+                    </div>
+                    <div class="flex items-center mb-4">
+                        <input type="checkbox" id="remember" class="mr-2">
+                        <label for="remember" class="text-gray-700">Remember Me</label>
+                    </div>
+                    <button class="w-full bg-[#580B25] text-white px-4 py-2 rounded-md hover:bg-red-600 transition">Log In</button>
+                    <!-- <button class="w-full mt-4 bg-gray-100 text-black px-4 py-2 rounded-md hover:bg-gray-200 flex items-center justify-center transition">
+                        <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google" class="w-6 h-6 mr-2"> Continue with Google
+                    </button> -->
+                </form>
+                <div class="mt-4  ">
+                    <a href="#" class=" text-sm hover:underline text-black ml-32">Forgot your password?</a>
+                </div>
+                <div class="mt-10  ">
+                <a href="#" class="hover:underline text-red-800 font-semibold py-10">Don't have an account ?</a>
+                <a href="#" class="hover:underline  font-semibold py-10">Register Now!!</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
