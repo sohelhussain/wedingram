@@ -24,7 +24,8 @@
     "dev": "npx nodemon app.js",
     "lint:fix": "eslint --fix .",
     "prepare": "husky",
-    "test": "node test.js"
+    "test": "node test.js",
+    "style": "npx tailwindcss -i ./styles/main.css -o ./public/stylesheets/output.css --watch"
   },
   "keywords": [],
   "author": "",
@@ -33,9 +34,12 @@
     "@commitlint/cli": "^19.5.0",
     "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.4.0",
+    "autoprefixer": "^10.4.20",
     "eslint": "^9.4.0",
     "globals": "^15.4.0",
     "husky": "^9.1.6",
-    "lint-staged": "^15.2.10"
+    "lint-staged": "^15.2.10",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14"
   }
 }
