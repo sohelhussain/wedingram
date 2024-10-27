@@ -32,7 +32,7 @@ router.get('/cyberLogout', cyberLogoutController);
 
 //? user routes for crud!
 
-router.get("/", userHomeController);
+router.get("/user", userHomeController);
 router.get('/search', searchController)
 router.get('/searchshow',searchBarController)
 router.get('/profile',userProfileController)
