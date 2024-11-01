@@ -58,6 +58,7 @@ const userSchema = new Schema(
     smoke: { type: String, enum: ["yes", "no", "occasionally"] },
     height: { type: String, trim: true },
     password: { type: String },
+    createdBy: [{ type: Schema.Types.ObjectId, ref: "cybercafe" }],
   },
   { timestamps: true }
 );
