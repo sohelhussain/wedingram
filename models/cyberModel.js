@@ -16,24 +16,22 @@ const cybercafeSchema = new Schema(
         /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/,
         "Please fill a valid email address",
       ],
-      role: { type: String, required: true, enum: ['cyber'], default: 'cyber' },
     },
-  password: { type: String, required: true, select: false },
-  shopRegistrationPhoto: { type: Buffer, default: "" },
-  shopRegistrationPhotoMimetype: { type: String, default: "" },
-  pancardPhoto: { type: Buffer, default: "" },
-  pancardPhotoMimetype: { type: String, default: "" },
-  adharcardPhoto: { type: Buffer, default: "" },
-  adharcardPhotoMimetype: { type: String, default: "" },
-  passportSizePhoto: { type: Buffer, default: "" },
-  passportSizePhotoMimetype: { type: String, default: "" },
-  role:{type: String, default: 'cyber'},
-  createdBy: [{ type: Schema.Types.ObjectId, ref: "user" }]
-
+    password: { type: String, required: true, select: false },
+    shopRegistrationPhoto: { type: Buffer, default: "" },
+    shopRegistrationPhotoMimetype: { type: String, default: "" },
+    pancardPhoto: { type: Buffer, default: "" },
+    pancardPhotoMimetype: { type: String, default: "" },
+    adharcardPhoto: { type: Buffer, default: "" },
+    adharcardPhotoMimetype: { type: String, default: "" },
+    passportSizePhoto: { type: Buffer, default: "" },
+    passportSizePhotoMimetype: { type: String, default: "" },
+    role: { type: String, required: true, enum: ["cyber"], default: "cyber" },
+    activity: { type: String, required: true, enum: ["inActive", "active"], default: "inActive" },
+    users: [{ type: Schema.Types.ObjectId, ref: "user" }],
   },
   { timestamps: true }
 );
-
 
 function cybervalidate(data) {
   const cybercafeSchemaJoi = Joi.object({
@@ -70,7 +68,7 @@ function cybervalidate(data) {
           encoding: Joi.string(),
           mimetype: Joi.string().required(),
           buffer: Joi.binary().required(),
-          size: Joi.number()
+          size: Joi.number(),
         })
       )
       .allow(null),
@@ -82,7 +80,7 @@ function cybervalidate(data) {
           encoding: Joi.string(),
           mimetype: Joi.string().required(),
           buffer: Joi.binary().required(),
-          size: Joi.number()
+          size: Joi.number(),
         })
       )
       .allow(null),
@@ -94,7 +92,7 @@ function cybervalidate(data) {
           encoding: Joi.string(),
           mimetype: Joi.string().required(),
           buffer: Joi.binary().required(),
-          size: Joi.number()
+          size: Joi.number(),
         })
       )
       .allow(null),
@@ -106,7 +104,7 @@ function cybervalidate(data) {
           encoding: Joi.string(),
           mimetype: Joi.string().required(),
           buffer: Joi.binary().required(),
-          size: Joi.number()
+          size: Joi.number(),
         })
       )
       .allow(null),
@@ -120,10 +118,6 @@ function cybervalidate(data) {
   const { error } = cybercafeSchemaJoi.validate(data);
   return error;
 }
-
-
-
-
 
 const cybercafe = mongoose.model("cybercafe", cybercafeSchema);
 module.exports.cyberModel = cybercafe;

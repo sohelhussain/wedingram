@@ -1,13 +1,15 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { cyberModel, cyberValidator } = require("../models/cyberModel");
+const adminModel = require('../models/adminModel');
 const sendMail = require("../utils/nodeMailer");
 const {generateTokenForCyber} = require("../utils/generateToken");
-
+    
 
 
 module.exports.postRegisterController = async (req, res) => {
   const { name, email, password } = req.body;
+  console.log("object");
   const { shopRegistrationPhoto = [], pancardPhoto = [], adharcardPhoto = [], passportSizePhoto = [] } = req.files || {};
 
   try {
@@ -49,7 +51,7 @@ module.exports.postRegisterController = async (req, res) => {
 
 module.exports.postRegisterOtpverification = async (req, res) => {
   const { otp } = req.body;
-
+  console.log(otp);
   try {
     // Validate OTP and session data
     if (!req.session.otp || otp != req.session.otp || !req.session.email) {
@@ -78,6 +80,12 @@ module.exports.postRegisterOtpverification = async (req, res) => {
       passportSizePhotoMimetype: passportSizePhoto[0] ? passportSizePhoto[0].mimetype : null,
     });
 
+
+    await adminModel.updateOne(
+      { role: 'admin' },  // Finds the single admin
+      { $push: { verifiedCafes: newCyber._id } }
+    );
+
     // Generate JWT token
     const token = jwt.sign(
       { id: newCyber._id, email: newCyber.email, cyber: true },
@@ -90,7 +98,6 @@ module.exports.postRegisterOtpverification = async (req, res) => {
 
     // Clear session data
     req.session.destroy();
-
     // return res.status(201).json({ message: "User created successfully." });
     return res.redirect('/cyber/cyberuser')
   } catch (err) {
