@@ -27,6 +27,7 @@ const cybercafeSchema = new Schema(
     passportSizePhoto: { type: Buffer, default: "" },
     passportSizePhotoMimetype: { type: String, default: "" },
     role: { type: String, required: true, enum: ["cyber"], default: "cyber" },
+    activity: { type: String, required: true, enum: ["inActive", "active"], default: "inActive" },
     users: [{ type: Schema.Types.ObjectId, ref: "user" }],
   },
   { timestamps: true }

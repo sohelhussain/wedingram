@@ -51,7 +51,7 @@ module.exports.postRegisterController = async (req, res) => {
 
 module.exports.postRegisterOtpverification = async (req, res) => {
   const { otp } = req.body;
-  
+  console.log(otp);
   try {
     // Validate OTP and session data
     if (!req.session.otp || otp != req.session.otp || !req.session.email) {
