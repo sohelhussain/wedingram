@@ -4,28 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="../styleSheets/output.css">
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+    rel="stylesheet"
+    />
   </head>
   <body  >
-    <div id="main  ">
+    <div id="main">
 
       <header class=" bg-[#580B25] w-[100vw] flex justify-between items-center py-2 px-6">
-        <div class="flex items-center space-x-3">
+        <div class="responsive-menu hidden max-md:flex text-[3.5vh] text-white font-medium">
+          <i class="ri-menu-2-line"></i>
+        </div>
+        <div class="flex  items-center space-x-3">
           <img
-            src="./IMG_20240821_162417-removebg-preview.png"
+            src="https://res.cloudinary.com/dsq2mqt8l/image/upload/v1730739454/wedinglogo_fb5x45.jpg"
             alt="Logo"
-            class="h-28 ml-10"
+            class="h-28 max-md:h-[8vh] ml-10"
           />
         </div>
-        <nav class="space-x-7 text-lg ml-14">
+        <nav class="space-x-7 max-md:hidden text-lg ml-14">
           <a href="#" class="hover:text-pink-300">Home</a>
           <a href="#" class="hover:text-pink-300">Events</a>
           <a href="#" class="hover:text-pink-300">Gallery</a>
           <a href="#" class="hover:text-pink-300">About</a>
           <a href="#" class="hover:text-pink-300">Find me</a>
         </nav>
-        <div class="flex items-center space-x-4">
+        <div class="flex max-md:hidden items-center space-x-4">
           <button class="h-9 w-16 bg-white text-[#660F2D] rounded-md">
             login
           </button>
@@ -35,29 +42,29 @@
         </div>
       </header>
   
-      <!-- Hero Section -->
+     
       <section
-        class="relative w-[100vw] bg-[#580B25] h-[85vh] flex flex-col justify-center items-center text-center px-10"
+        class="relative w-[100vw] bg-[#580B25] max-md:h-[70vh] h-[85vh] flex flex-col justify-center items-center text-center max-md:px-5 lg:px-10"
       >
         <div
           class="absolute inset-0 bg-cover bg-center"
-          style="background-image: url('background-image.jpg')"
+          style="background-image: url('')"
         ></div>
   
         <!-- Overlay for dark background -->
-        <div class="absolute inset-0 bg-[#580B25] opacity-80"></div>
+        <div class="absolute lg:inset-0 bg-[#580B25] opacity-80"></div>
   
         <!-- Content (text and image) -->
         <div
-          class="relative z-10 flex items-center justify-between max-w-6xl ml-44 mt-16"
+          class="relative z-10  max-md:flex-col max-md:w-full flex items-center justify-between max-w-6xl lg:ml-44 lg:mt-16"
         >
           <!-- Left Section (Image) -->
-          <div class="flex-1">
-            <img src="" alt="Couple Image" class="w-50" />
+          <div class="max-md:w-full">
+            <img src="https://res.cloudinary.com/dsq2mqt8l/image/upload/v1730739455/wedingimg1_hhg8nr.jpg" alt="Couple Image" class="lg:w-50 max-md:h-[30vh] h-[50vh]" />
           </div>
   
           <!-- Right Section (Text) -->
-          <div class="flex-1 text-white space-y-5 ml-44">
+          <div class="max-md:w-full w-[50vh] text-white space-y-5 lg:ml-44">
             <h1 class="text-4xl lg:text-5xl font-light leading-tight">
               Perfect Weddings <br />
               Made Easy!!!
@@ -76,70 +83,70 @@
         </div>
       </section>
   
-      <div class="page21 h-[100vh] flex bg-[#FFFFFF]">
-        <div class="page21-1 h-[100vh] w-[42vw] text-[#580B25]">
-          <div class="page21-div h-16 w-[35vw] bg-[#580B25] mt-16"></div>
-          <h6 class="text-[#580B25] mt-20 ml-96 text-2xl">We do With</h6>
-          <h1 class="text-8xl ml-48">Passion</h1>
-          <p class="px-2 w-80 mt-2 ml-48 text-[red]">
+      <div class="page21 h-[100vh] max-md:h-[115vh] relative flex max-md:flex-col bg-[#FFFFFF]">
+        <div class="page21-1 h-[100vh] w-[42vw] max-md:w-full text-[#580B25]">
+          <div class="page21-div h-16 max-md:w-[70vw] w-[35vw] bg-[#580B25] mt-16"></div>
+          <h6 class="text-[#580B25] mt-20 max-md:ml-5 ml-96 text-2xl">We do With</h6>
+          <h1 class="text-8xl ml-48 max-md:ml-5">Passion</h1>
+          <p class="px-2 w-80 mt-2 ml-48 max-md:ml-5 text-[red]">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum
             asperiores libero nostrum distinctio? Labore, vitae.
           </p>
           <button
-            class="h-12 w-56 border-[2px] border-red-100 mt-5 ml-48 rounded-full"
+            class="h-12  w-56 border-[2px] border-red-100 mt-5 ml-48 max-md:ml-5 rounded-full"
           >
             Learn More
           </button>
           <div
-            class="page21-div h-16 w-[45vw] mt-16 ml-52 bg-[#580B25] absolute"
+            class="page21-div h-16 w-[45vw]  max-md:w-[80vw] max-md:right-0 mt-16 lg:ml-52 bg-[#580B25] absolute"
           ></div>
         </div>
   
-        <div class="page21-2 h-[100vh] w-[50vw] bg-[#FFFFFF] flex">
-          <div class="page21-2 h-[100vh] w-[28vw]">
-            <div class="div1">
+        <div class="page21-2 max-md:h-[70vh] h-[100vh] max-md:w-full w-[50vw]   flex">
+          <div class="page21-2 h-[100vh] max-md:w-[80%] max-md:mx-auto w-[28vw]">
+            <div class="div1 max-md:mt-[15vh]">
               <img
-                src="./711fac850e0b5bec2ae25fc1ab503b703dd1be30dc142c30409c84c5cb279b46.jpg"
+                src="https://res.cloudinary.com/dsq2mqt8l/image/upload/v1730739455/wedingimg3_eqgkar.jpg"
                 alt=""
-                class="py-10 rounded-ss-[100px]"
+                class="py-10 lg:rounded-ss-[100px]"
               />
             </div>
-            <div class="div2">
+            <!-- <div class="div2">
               <img
-                src="./94057-144531255-2879582352326404-372421048793887669-n.jpeg"
+                src="https://res.cloudinary.com/dsq2mqt8l/image/upload/v1730739454/wedingimg4_j8aaeq.jpg"
                 alt=""
-                class="h-[55vh] absolute ml-20 rounded-ee-[50px]"
+                class="h-[55vh]  left-[100%] rounded-ee-[50px]"
               />
-            </div>
+            </div> -->
           </div>
-          <div class="page21-2-2">
-              <img src="./images.jpg" alt="" class="h-[75vh] mt-16 ml-20 rounded-se-[100px]">
+          <div class="page21-2-2 max-md:hidden">
+              <img src="https://res.cloudinary.com/dsq2mqt8l/image/upload/v1730739455/wedingimg2_diqibw.jpg" alt="" class="h-[75vh] mt-16 ml-20 rounded-se-[100px]">
           </div>
         </div>
       </div>
   
   
-      <div class="page2 h-screen w-full bg-[#FFFFFF] ">
+      <div class="page2 h-screen w-full bg-[#fffff]  max-md:px-2">
         <div class="textcontainer flex items-center justify-center mt-12 flex-col gap-1 text-center">
-            <h1 class="font-bold text-7xl text-[#65102C]">Includes some of </h1>
-        <h1 class="font-bold text-7xl text-[#65102C] ">users</h1>
-        <p class="text-xl text-[#FF725E]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Id quisquam quasi sapiente neque aperiam velit recusandae eius ea, dolor illo!
+            <h1 class="font-bold max-md:text-[5vh] text-7xl text-[#65102C]">Includes some of </h1>
+        <h1 class="font-bold max-md:text-[5vh] text-7xl text-[#65102C] ">users</h1>
+        <p class="text-xl max-md:text-[2.4vh] max-md:my-3 text-[#FF725E]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Id quisquam quasi sapiente neque aperiam velit recusandae eius ea, dolor illo!
         </p>
-        <div class="imgcontainer flex flex-col items-center justify-center gap-5 mt-12">
+        <div class="imgcontainemax-md:h-[60vh] max-md:w-full flex flex-col items-center justify-center gap-5 mt-12">
             <div class="imgcontainertop flex items-center justify-center gap-3">
-                <div class="imgtopleft h-[18vw] w-[25vw] bg-red-500 rounded-es-[10vw] overflow-hidden">
+                <div class="imgtopleft h-[18vw] max-md:w-[45vw] max-md:h-[25vh] w-[25vw] bg-red-500 rounded-es-[10vw] overflow-hidden">
   
                     <img class="h-full w-full object-cover" src="https://plus.unsplash.com/premium_photo-1691030256206-b7398c8bfc49?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aW5kaWFuJTIwd2VkZGluZyUyMG1vZGVscyUyMHBob3RlfGVufDB8fDB8fHww" alt="">
                 </div>
-                <div class="imgtopright h-[18vw] w-[25vw] bg-red-500  rounded-ee-[10vw] overflow-hidden">
+                <div class="imgtopright h-[18vw] max-md:w-[45vw] max-md:h-[25vh] w-[25vw] bg-red-500  rounded-ee-[10vw] overflow-hidden">
                     <img class="h-full w-full object-cover" src="https://plus.unsplash.com/premium_photo-1724762183473-5e79760ca3d7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8aW5kaWFuJTIwd2VkZGluZyUyMG1vZGVscyUyMHBob3RlfGVufDB8fDB8fHww" alt="">
                 </div>
             </div>
             <div class="imgcontainerbtm flex items-center justify-center gap-3">
-                <div class="imgbtmleft h-[18vw] w-[25vw] bg-red-500 rounded-ss-[10vw] overflow-hidden">
+                <div class="imgbtmleft h-[18vw] max-md:w-[45vw] max-md:h-[25vh] w-[25vw] bg-red-500 rounded-ss-[10vw] overflow-hidden">
                     <img class="h-full w-full object-cover" src="https://plus.unsplash.com/premium_photo-1691030256235-47d75d5890b9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGluZGlhbiUyMHdlZGRpbmclMjBtb2RlbHMlMjBwaG90ZXxlbnwwfHwwfHx8MA%3D%3D" alt="">
                 </div>
-                <div class="imgbtmright h-[18vw] w-[25vw] bg-red-500 rounded-se-[10vw] overflow-hidden">
+                <div class="imgbtmright h-[18vw] max-md:w-[45vw] max-md:h-[25vh] w-[25vw] bg-red-500 rounded-se-[10vw] overflow-hidden">
                     <img class="h-full w-full object-cover " src="https://plus.unsplash.com/premium_photo-1691030255934-45db499c25b0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D" alt="">
                 </div>
             </div>
@@ -151,37 +158,39 @@
       </div>
   
   
-      <div class="page3 h-[50vw] w-full flex items-center relative justify-center gap-1">
+      <div class="page3 h-[50vw] w-full max-md:h-[40vh] max-md:border-[2vh] max-md:border-[#65102c] overflow-x-hidden max-md:px-3 flex items-center relative justify-center gap-1">
             
   
-        <div class="text3container flex flex-col gap-4  relative ml-[-35vw] mt-[10vw]">
-            <h1 class="text-7xl text-[#65102C]">Unforgottable</h1>
-            <h1 class="text-7xl text-[#65102C]">Wedding Program</h1>
-            <p class="text-xl text-[#FF725E]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Itaque quasi minus, dicta qui blanditiis libero.</p>
+        <div class="text3container flex flex-col max-md:px-2 gap-4 max-md:flex max-md:items-center max-md:flex-col  relative lg:ml-[-35vw] lg:mt-[10vw]">
+            <h1 class="text-7xl text-[#65102C] max-md:font-semibold whitespace-nowrap max-md:text-[5vh]">Unforgottable</h1>
+            <h1 class="text-7xl text-[#65102C] max-md:font-semibold whitespace-nowrap max-md:text-[5vh]">Wedding Program</h1>
+            <p class="text-xl max-md:text-center max-md:text-[2.4vh] max-md:font-medium text-[#FF725E]">Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br> Itaque quasi minus, dicta qui blanditiis libero.</p>
         </div>
         
-        <div class="text3strip1 mt-10 h-[4vw] w-[60vw] top-[10vw] bg-[#65102C] left-[40vw] absolute"></div>
+        <div class="max-md:hidden">
+          <div class="text3strip1 mt-10 h-[4vw]  w-[60vw] top-[10vw] bg-[#65102C] left-[40vw] absolute"></div>
         <div class="text3strip2 mt-10 h-[30vw] w-[10vw] top-[10vw] bg-[#65102C] left-[90vw] absolute"></div>
         <div class="text3strip3 mt-10 h-[10vw] w-[30vw] top-[20vw] bg-[#65102C] left-[60vw] absolute"></div>
   
+        </div>
   
       </div>
   
-       <div class="page4 h-[50vw] w-[100vw] bg-[#65102C] flex gap-[5vw] items-center justify-around">
+       <div class="page4 h-[50vw] max-md:h-fit max-md:flex-col w-[100vw] bg-[#65102C] flex gap-[5vw] items-center justify-around">
   
-        <div class="text4container">
-            <h1 class="text-7xl text-white">How to connect </h1>
-            <h1 class="text-7xl text-white">with peoples</h1>
-            <p class="mt-4 text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br> Explicabo dolores necessitatibus molestias a  <br>sunt vitae.</p>
-            <button class="border-2 border-white mt-3  text-white px-4 py-2 mt-2 rounded-[50px]"> Let's try</button>
+        <div class="text4container  mt-3 max-md:flex px-3 max-md:flex-col max-md:w-full max-md:items-center">
+            <h1 class="text-7xl text-white max-md:text-[4.9vh]">How to connect </h1>
+            <h1 class="text-7xl text-white max-md:text-[4.9vh]">with peoples</h1>
+            <p class="my-5 max-md:text-center max-md:text-[2.4vh] text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br class="max-md:hidden"> Explicabo dolores necessitatibus molestias a  <br>sunt vitae.</p>
+            <button class="border-2 border-white max-md:px-[5vh] max-md:text-[2.4vh]  text-white px-4 py-2 mt-2 rounded-[50px]"> Let's try</button>
         </div>
-        <div class="coupleimg h-[40vw] mt-[-6vw] w-[25vw]">
-            <img class="object-cover h-full w-full" src="./bgremovecouple.png" alt="">
+        <div class="coupleimg h-[40vw] max-md:h-[50vh] max-md:py-5 max-md:w-full px-2 lg:mt-[-6vw] w-[25vw]">
+            <img class="object-cover h-full w-full" src="https://res.cloudinary.com/dsq2mqt8l/image/upload/v1730739455/wedingimg2_diqibw.jpg" alt="">
         </div>
        </div>
   
   
-       <div class="footer h-[50vh] w-[100vw] flex items-center justify-center">
+       <div class="footer h-[50vh] max-md:h-[20vh] w-[100vw] flex items-center justify-center">
         <div class="footercontainer h-[80%] w-full bg-[#3F0015] mt-24 rounded-ss-[20vw] rounded-se-[20vw]">
   
         </div>
