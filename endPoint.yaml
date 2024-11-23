@@ -1,4 +1,4 @@
 
 admin
-  change-cyber-activity=/admin/active/cyberId
-  change-cyber-inactivity=/admin/inactive/cyberId
+  change-cyber-cyberToggleActivity= /admin/cyberToggleActivity/:cyberId
+  cyberDelete= /admin/cyberDelete/:cyberId
