@@ -1,0 +1,4 @@
+
+admin
+  change-cyber-cyberToggleActivity= /admin/cyberToggleActivity/:cyberId
+  cyberDelete= /admin/cyberDelete/:cyberId
