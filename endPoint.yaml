@@ -1,0 +1,4 @@
+
+admin
+  change-cyber-activity=/admin/active/cyberId
+  change-cyber-inactivity=/admin/inactive/cyberId
