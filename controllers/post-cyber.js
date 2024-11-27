@@ -130,3 +130,33 @@ module.exports.cyberLogoutController = async (req, res) => {
     res.clearCookie("cyberToken");
     return res.status(200).json({ message: "Logout successful." });
 }
+
+module.exports.postcyberedit = async (req, res) => {
+  try {
+    const oldCyber = req.cyber;
+    const {name} = req.body;
+    if (!oldCyber) {
+      return res.status(404).redirect("/cyber");
+    }
+
+    // Validate input using Joi
+    const error = cyberValidator({ name });
+    if (error) {
+      return res.status(400).json({ error: error.details[0].message });
+    }
+
+
+    // Update `oldCyber` securely
+    oldCyber.name = sanitizedName;
+
+    // Save or update the database (replace `saveCyber` with your DB operation)
+    await oldCyber.save(); // Replace this with your database logic
+    res.status(200).redirect("/cyber");
+  } catch (error) {
+    console.error("Error updating cyber:", error.message);
+
+    // Avoid exposing sensitive error details
+    res.status(500).send("An error occurred while updating cyber.");
+  }
+  
+}

@@ -22,7 +22,8 @@ router.post("/newcyber/create",upload.fields([
     { name: 'passportSizePhoto', maxCount: 1 }
   ]), postRegisterController);
 
-router.post("/newcyber/verifyOtp",postRegisterOtpverification );
+router.post("/newcyber/verifyOtp",postRegisterOtpverification);
+router.post("/cyber/edit",postcyberedit);
 
 router.post('/cyberLogin', cyberLoginController);
 router.get('/cyberLogout', cyberLogoutController);
@@ -37,7 +38,7 @@ router.get('/search', searchController)
 router.get('/searchshow',searchBarController)
 router.get('/profile',userProfileController)
 router.get('/userfeed',userFeedController)
-router.get('/pagenotfound',pageNotFound)
+// router.get('/pagenotfound',pageNotFound)
 
 
 // creaet user
