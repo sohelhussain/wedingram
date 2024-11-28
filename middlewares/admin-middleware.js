@@ -14,7 +14,8 @@ const adminAuthDash = (permisssion) => {
     if (permisssion.includes(userRole)) {
       next();
     } else {
-      res.send("You are not allowed, you are not a admin or cyber");
+      console.log('object');
+      res.redirect('/');
     }
   };
 };

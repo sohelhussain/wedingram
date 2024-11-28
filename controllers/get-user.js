@@ -6,7 +6,7 @@ module.exports.pageNotFound = (req, res) => {
 }
 
 module.exports.userHomeController = (req, res) => {
-  res.render("user");
+  res.render("userregister");
 };
 module.exports.searchBarController = (req, res) => {
   res.render("search");

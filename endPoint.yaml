@@ -1,4 +1,27 @@
 
 admin
-  change-cyber-cyberToggleActivity= /admin/cyberToggleActivity/:cyberId
-  cyberDelete= /admin/cyberDelete/:cyberId
+  change-cyber-cyberToggleActivity=#! /admin/cyberToggleActivity/:cyberId
+  cyberDelete=#! /admin/cyberDelete/:cyberId
+
+cyber
+  #?crud opration
+    cyber-create=#! /cyber/newcyber/create
+    veryfi-otp-cyber=#! /cyber/newcyber/verifyOtp
+    cyber-login=#! /cyber/cyberLogin
+    cyber-logout=#! /cyber/cyberLogout
+    user-usercreate=#! /cyber/usercreate
+    user-usercreate=#! /cyber/usercreate/otpverify
+    user-userlogin=#! /cyber/userLogin
+    user-userlogout=#! /cyber/userLogout
+
+  #? opration
+    cyber-otp-page=#! /cyber/verify
+    user-creation=#! /cyber/user
+    user-search=#! /cyber/search
+    user-search-result=#! /cyber/searchshow
+    user-profile=#! /cyber/profile
+    user-feed=#! /cyber/userfeed
+
+user
+  #? curd opration
+

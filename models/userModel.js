@@ -59,6 +59,7 @@ const userSchema = new Schema(
     height: { type: String, trim: true },
     password: { type: String },
     createdBy: [{ type: Schema.Types.ObjectId, ref: "cybercafe" }],
+    like: [{ type: Schema.Types.ObjectId, ref: "user" }],
   },
   { timestamps: true }
 );

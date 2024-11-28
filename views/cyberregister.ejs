@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Register Form</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../styleSheets/output.css">
+</head>
+<body class="flex items-center justify-center min-h-screen bg-[#580B25]">
+
+  <!-- Registration Form Container -->
+  <div class="w-full max-w-lg p-8 bg-white rounded-lg shadow-lg">
+    <a class="absolute top-5 left-5 text-white" href="/">
+      < Back
+  </a>
+    <h2 class="text-3xl font-bold text-center text-gray-800">Register</h2>
+    <p class="mt-2 text-sm text-center text-gray-600">Create an account to get started!</p>
+
+    <form action="/cyber/newcyber/create" method="post" enctype="multipart/form-data" class="mt-6 space-y-6">
+      <!-- Name -->
+      <div>
+        <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+        <input 
+          type="text" 
+          name="name" 
+          id="name" 
+          placeholder="Enter your name" 
+          required 
+          class="w-full p-3 mt-1 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <input 
+          type="email" 
+          name="email" 
+          id="email" 
+          placeholder="Enter your email address" 
+          required 
+          class="w-full p-3 mt-1 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <input 
+          type="password" 
+          name="password" 
+          id="password" 
+          placeholder="Create a password" 
+          required 
+          class="w-full p-3 mt-1 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+
+      <!-- File Uploads -->
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Shop Registration Photo</label>
+        <input 
+          type="file" 
+          name="shopRegistrationPhoto" 
+          required 
+          class="w-full p-2 mt-1 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Pancard Photo</label>
+        <input 
+          type="file" 
+          name="pancardPhoto" 
+          required 
+          class="w-full p-2 mt-1 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Adharcard Photo</label>
+        <input 
+          type="file" 
+          name="adharcardPhoto" 
+          required 
+          class="w-full p-2 mt-1 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium text-gray-700">Passport Size Photo</label>
+        <input 
+          type="file" 
+          name="passportSizePhoto" 
+          required 
+          class="w-full p-2 mt-1 border rounded-md focus:ring-blue-500 focus:border-blue-500"
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <button 
+        type="submit" 
+        class="w-full py-3 mt-4 text-white bg-[#580B25] rounded-md hover:hover:bg-[#580b25db] transition duration-300"
+      >
+        Register
+      </button>
+    </form>
+    <a href="/cyber/signin" class="hover:underline text-red-800 font-semibold py-3 inline-block">Alrady have an account ?</a>
+    <a href="/cyber/signin" class="hover:underline  font-semibold py-3">Signin Now!!</a>
+  </div>
+
+</body>
+</html>
