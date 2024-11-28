@@ -41,7 +41,7 @@ module.exports.cyberDelete = async (req, res) => {
 
 module.exports.adminDashboard = (req, res) => {
     try {
-        res.send('this is a admin dash board');
+        res.render('admindashboard');
     } catch (error) {
         console.error(`Something went wrong in this route ${error.message}`);
         res.status(404).render("404", { title: "Page Not Found" });

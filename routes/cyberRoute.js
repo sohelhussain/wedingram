@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const { cyberController , verifyController, cyberUserController} = require("../controllers/get-cyber");
-const { postRegisterController, postRegisterOtpverification, cyberLoginController, cyberLogoutController } = require("../controllers/post-cyber");
+const { cyberRegister, cybersignin, verifyController, cyberUserController} = require("../controllers/get-cyber");
+const { postRegisterController, postRegisterOtpverification, cyberLoginController, cyberLogoutController, postcyberedit } = require("../controllers/post-cyber");
 const { userHomeController, searchController, searchBarController,userProfileController, userFeedController, pageNotFound} = require("../controllers/get-user");
 const { userCreateController , userCreateOtpVerification, userLoginController, userLogoutController } = require("../controllers/post-user");
 const upload = require("../config/multer-config")
@@ -9,7 +9,8 @@ const upload = require("../config/multer-config")
 
 
 
-router.get("/", cyberController);
+router.get("/", cyberRegister);
+router.get("/signin", cybersignin);
 router.get("/verify", verifyController);
 router.get("/cyberuser", cyberUserController);
 

@@ -128,7 +128,7 @@ module.exports.cyberLoginController = async (req, res) => {
 module.exports.cyberLogoutController = async (req, res) => {
     req.session.destroy();
     res.clearCookie("cyberToken");
-    return res.status(200).json({ message: "Logout successful." });
+    return res.redirect('/');
 }
 
 module.exports.postcyberedit = async (req, res) => {
@@ -147,7 +147,7 @@ module.exports.postcyberedit = async (req, res) => {
 
 
     // Update `oldCyber` securely
-    oldCyber.name = sanitizedName;
+    oldCyber.name = name;
 
     // Save or update the database (replace `saveCyber` with your DB operation)
     await oldCyber.save(); // Replace this with your database logic
