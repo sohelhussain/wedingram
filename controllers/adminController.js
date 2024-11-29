@@ -1,5 +1,7 @@
 const {cyberModel} = require('../models/cyberModel');
-
+const adminModel = require('../models/adminModel');
+const bcrypt = require('bcrypt')
+const {generateTokenAdmin} = require('../utils/generateToken')
 
 
 module.exports.cyberToggleActivity = async (req, res) => {
@@ -48,3 +50,26 @@ module.exports.adminDashboard = (req, res) => {
     }
 }
 
+module.exports.adminLogin = async (req, res) => {
+    const admin = await adminModel.findOne({ email: req.body.email }).select("+password");
+
+    if (!admin) {
+        return res.status(401).json({ error: "Invalid email or password." });
+    }
+
+    const isMatch = await bcrypt.compare(req.body.password, admin.password);
+
+    if (!isMatch) {
+        return res.status(401).json({ error: "Invalid email or password." });
+    }
+
+    const token = generateTokenAdmin(admin);
+    res.cookie("adminToken", token);
+
+    // return res.status(200).json({ message: "Login successful.", admin });
+    res.redirect('/admin/dashboard')
+}
+
+module.exports.adminloginpage = (req, res) => {
+    res.render('adminLogin');
+}

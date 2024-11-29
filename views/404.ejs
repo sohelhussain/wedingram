@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
-    <link rel="stylesheet" href="/styles/404.css"> <!-- Link to any custom styles -->
+    <title>404 - Page Not Found</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styleSheets/output.css">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #580B25, #e3f2fd);
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <h1>404 - Page Not Found</h1>
-    <p>The page you are looking for does not exist. Please check the URL and try again.</p>
-    <a href="/">Go back to Home</a>
+<body class="flex items-center justify-center min-h-screen">
+
+    <!-- Main 404 Container -->
+    <div class="text-center bg-white p-10 rounded-lg shadow-lg">
+        <h1 class="text-6xl font-bold text-[#580B25] mb-4">404</h1>
+        <h2 class="text-2xl font-semibold text-gray-800 mb-2">Oops! Page Not Found</h2>
+        <p class="text-gray-600 mb-6">
+            The page you're looking for doesn't exist or has been moved. <br>
+            Please check the URL or return to the homepage.
+        </p>
+        <a href="/" class="py-2 px-6 text-white bg-[#580B25] rounded-md hover:bg-[#580B25db] transition duration-300">
+            Go Back to Home
+        </a>
+    </div>
+
 </body>
 </html>

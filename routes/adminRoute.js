@@ -7,6 +7,7 @@ const {cyberToggleActivity, cyberDelete, adminDashboard} = require('../controlle
 // cyberAuthPage(["cyber"]),
 
 router.get("/", adminPageController);
+router.get('/loginPage', adminDashboard)
 
 router.get("/cyberToggleActivity/:cyberId", cyberToggleActivity);
 router.delete('/cyberDelete/:cyberId', cyberDelete);
