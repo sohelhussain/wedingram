@@ -6,11 +6,11 @@ const indexRouter = require("./routes/indexRoute");
 const cyberRouter = require("./routes/cyberRoute");
 const adminRouter = require("./routes/adminRoute");
 const path = require("path");
-const creatingAdmin = require('./controllers/creatingAdmin')
+require('./controllers/creatingAdmin')
 const expressSession = require("express-session");
 const flash = require("connect-flash");
 const PORT = process.env.PORT || 8000; // Use the port from environment variables or default to 3000
-console.log(creatingAdmin);
+
 require("./config/mongodb-connection");
 
 // Set the view engine to EJS
