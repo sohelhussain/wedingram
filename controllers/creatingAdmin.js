@@ -1,5 +1,5 @@
 
-const adminModel = require('../models/adminModel');
+const {adminModel} = require('../models/adminModel');
 const bcrypt = require('bcrypt');
 
 
