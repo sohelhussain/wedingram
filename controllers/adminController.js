@@ -42,7 +42,7 @@ module.exports.cyberDelete = async (req, res) => {
 
 module.exports.adminDashboard = async (req, res) => {
     try {
-        // const allCybers = await cyberModel.find();
+        // const activeCyber = await cyberModel.find({ activity: "active" });
         // const allUsers = await userModel.find();
         res.render('admindashboard');
     } catch (error) {
