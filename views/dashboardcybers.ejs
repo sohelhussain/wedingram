@@ -55,29 +55,13 @@
             <!-- Dashboard Section -->
             <section id="dashboardSection">
                 <header class="flex items-center justify-between mb-8">
-                    <h1 class="text-3xl font-semibold text-gray-800">Dashboard Overview</h1>
+                    <h1 class="text-3xl font-semibold text-gray-800">Inactive Cybers</h1>
                     <!-- <div>
                         <button class="bg-[#580B25] text-white px-4 py-2 rounded hover:bg-blue-600">Add New</button>
                     </div> -->
                 </header>
 
                 <!-- Dashboard Cards -->
-                <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <h2 class="text-xl font-semibold text-gray-800">Total Users</h2>
-                        <p class="mt-2 text-gray-600">1,234</p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <h2 class="text-xl font-semibold text-gray-800">Active Cybers</h2>
-                        <p class="mt-2 text-gray-600">567</p>
-                    </div>
-
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <h2 class="text-xl font-semibold text-gray-800">Total Revenue</h2>
-                        <p class="mt-2 text-gray-600">$12,345</p>
-                    </div>
-                </section>
 
                 <!-- Table -->
                 <section class="mt-8">
@@ -95,15 +79,19 @@
                             <tbody>
                                 <tr class="border-b">
                                     <td class="py-3 px-6">John Doe</td>
-                                    <td class="py-3 px-6">Logged in</td>
+                                    <td class="py-3 px-6">Inactive</td>
                                     <td class="py-3 px-6">Aug 18, 2024</td>
-                                    <td class="py-3 px-6 text-green-500">Success</td>
+                                    <a href="/admin/cyberToggleActivity/:cyberId">
+                                        <td class="py-3 px-6 text-red-500"><span class="p-2 rounded bg-red-300"><i class="ri-check-double-fill"></i></span></td>
+                                    </a>
                                 </tr>
                                 <tr class="border-b">
                                     <td class="py-3 px-6">Jane Smith</td>
-                                    <td class="py-3 px-6">Updated profile</td>
+                                    <td class="py-3 px-6">Active</td>
                                     <td class="py-3 px-6">Aug 18, 2024</td>
-                                    <td class="py-3 px-6 text-green-500">Success</td>
+                                    <a href="/admin/cyberToggleActivity/:cyberId">
+                                        <td class="py-3 px-6 text-green-500">Success</td>
+                                    </a>
                                 </tr>
                                 <!-- Add more rows as needed -->
                             </tbody>
@@ -111,7 +99,6 @@
                     </div>
                 </section>
             </section>
-
         </main>
     </div>
 

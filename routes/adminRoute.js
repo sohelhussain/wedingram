@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { adminPageController } = require("../controllers/creatingAdmin");
 // const {adminAuthDash} = require("../middlewares/admin-middleware");
-const {cyberToggleActivity, cyberDelete, adminDashboard, adminLogin, adminloginpage} = require('../controllers/adminController');
+const {cyberToggleActivity, cyberDelete, adminDashboard, adminLogin, adminloginpage, adminlogout, dashboardcybers} = require('../controllers/adminController');
 
 // cyberAuthPage(["cyber"]),
 
@@ -13,6 +13,8 @@ router.post('/login', adminLogin)
 router.get("/cyberToggleActivity/:cyberId", cyberToggleActivity);
 router.delete('/cyberDelete/:cyberId', cyberDelete);
 router.get('/dashboard' , adminDashboard)
+router.get('/logout', adminlogout)
+router.get('/dashboard/cybers' , dashboardcybers)
 
 
 

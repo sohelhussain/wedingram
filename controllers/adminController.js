@@ -1,5 +1,6 @@
 const {cyberModel} = require('../models/cyberModel');
 const {adminModel} = require('../models/adminModel');
+// const userModel = require('../models/userModel')
 const bcrypt = require('bcrypt')
 const {generateTokenAdmin} = require('../utils/generateToken')
 
@@ -31,7 +32,7 @@ module.exports.cyberDelete = async (req, res) => {
             return res.status(404).json({ error: "Cyber record not found" });
         }
         
-        res.status(200).json({ message: "Cyber deleted successfully", name: cyber.name });
+        res.status(200).redirect('/');
     } catch (error) {
         console.error("Error deleting cyber record:", error.message);
         res.status(500).json({ error: "An error occurred while deleting cyber record" });
@@ -41,8 +42,9 @@ module.exports.cyberDelete = async (req, res) => {
 
 module.exports.adminDashboard = async (req, res) => {
     try {
-        const allCybers = await cyberModel.find();
-        res.render('admindashboard', allCybers);
+        // const allCybers = await cyberModel.find();
+        // const allUsers = await userModel.find();
+        res.render('admindashboard');
     } catch (error) {
         console.error(`Something went wrong in this route ${error.message}`);
         res.status(404).render("404", { title: "Page Not Found" });
@@ -57,13 +59,13 @@ module.exports.adminLogin = async (req, res) => {
         console.log(admin);
 
         if (!admin) {
-            return res.status(401).json({ error: "Invalid email or password.", redirect: '/' });
+            return res.status(401).redirect('/');
         }
 
         const isMatch = await bcrypt.compare(req.body.password, admin.password);
 
         if (!isMatch) {
-            return res.status(401).json({ error: "Invalid email or password.",redirect: "/" });
+            return res.status(401).redirect('/')
         }
 
 
@@ -77,7 +79,7 @@ module.exports.adminLogin = async (req, res) => {
         });
 
 
-        res.status(200).json({ message: "Login successful!", redirect: "/admin/dashboard" });
+        res.status(200).redirect("/admin/dashboard");
     } catch (error) {
 
         console.error("Error during admin login:", error.message);
@@ -87,4 +89,19 @@ module.exports.adminLogin = async (req, res) => {
 
 module.exports.adminloginpage = async (req, res) => {
     res.render('adminLogin');
+}
+
+module.exports.adminlogout = async (req, res) => {
+    req.session.destroy();
+    res.clearCookie("adminToken");
+    return res.redirect('/');
+}
+
+module.exports.dashboardcybers = (req, res) => {
+    try {
+        res.render('dashboardcybers')
+    } catch (error) {
+        console.error(`Something went wrong in this route ${error.message}`);
+        res.status(404).render("404", { title: "Page Not Found" });
+    }
 }
