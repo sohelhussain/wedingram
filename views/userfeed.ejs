@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cyber Page - Wedding Partner Search</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styleSheets/output.css">
 </head>
 <body class="bg-gray-100">
 
@@ -14,9 +15,9 @@
         <!-- Content Area -->
         <main class="w-full h-screen p-6">
             <!-- Search Bar -->
-            <form id="searchForm" class="flex items-center justify-between mb-4">
+            <form method="get" action="/cyber/search" id="searchForm" class="flex items-center justify-between mb-4">
                 <input id="searchInput" class="w-full p-2 border-2 border-gray-300 rounded-full focus:outline-none focus:border-blue-500" type="text" placeholder="Search...">
-                <button type="submit" class="ml-4 py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600">Search</button>
+                <button type="submit" class="ml-4 py-2 px-4 bg-[#580B25] text-white rounded hover:bg-[#580B25dd]">Search</button>
             </form>
 
             <!-- Grid Layout for search results -->
@@ -25,14 +26,16 @@
                     <p class="col-span-4 text-center text-gray-600">No users found</p>
                 <% } else { %>
                     <% users.forEach(user => { %>
-                        <div class="p-4 bg-white rounded shadow-md flex flex-col items-center">
-                            <div class="w-full h-52 bg-gray-200 overflow-hidden">
-                                <img class="h-full w-full object-cover" src="<%= user.image || 'default-image-url.jpg' %>" alt="User Image">
-                            </div>
-                            <p class="mt-4 text-lg font-semibold"><%= user.fullname %></p>
-                            <p class="mt-4 text-lg font-semibold"><%= user.email %></p>
-                            <button class="mt-2 py-1 px-6 bg-blue-500 text-white rounded hover:bg-blue-600">View</button>
-                        </div>
+                                  <div class="h-72 w-80 rounded-xl p-2 relative" style="background-color: #580B25;">
+                <div class="h-40 rounded-md w-full overflow-hidden bg-green-200 ">
+                    <img class="w-full h-full object-cover" src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Indian_girl_in_traditional_attire.jpg" alt="">
+                </div>
+                <h1 class="text-2xl mt-4 text-white capitalize"><%= user.firstName %></h1>
+                <a class="ml-44 mt-10" href="/cyber/viewsuser/<%= user.id %>">
+                    <button class="px-4 mt-3 py-2 bg-gray-200 rounded">open profile</button>
+                </a>
+            </div>
+            <!-- <img class="h-full w-full object-cover" src="<%= user.image || 'default-image-url.jpg' %>" alt="User Image"> -->
                     <% }) %>
                 <% } %>
             </div>
@@ -59,7 +62,7 @@
 
         try {
             // Send the search query to the backend
-            const response = await axios.get('/user/search', {
+            const response = await axios.get('/cyber/search', {
                 params: { query: searchTerm }
             });
 

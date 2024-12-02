@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive User Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styleSheets/output.css">
+</head>
+<body class="bg-[#580B25]">
+
+    <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl w-full bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-extrabold text-center text-gray-800 mb-6">Edit Your Account</h2>
+            
+            <!-- Form starts here -->
+            <form action="/cyber/useredit" method="POST" enctype="multipart/form-data" class="space-y-6">
+                
+                <!-- Profile Picture Upload Section -->
+                <div class="text-center mb-6">
+                    <label for="profilePicture" class="block text-gray-700 font-medium mb-2">Upload Your Profile Picture</label>
+                    <div class="relative w-40 h-40 mx-auto">
+                        <img id="profilePicPreview" src="https://via.placeholder.com/150" alt="Profile Picture" class="w-full h-full rounded-full object-cover border-4 border-gray-300 shadow-sm">
+                        <input type="file" id="profilePicture" name="profilePicture" accept="image/*" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer" onchange="previewImage(event)">
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">Profile edit</p>
+                </div>
+
+                <!-- Basic User Information -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">First Name</label>
+                        <input type="text" name="firstName" placeholder="Enter your first name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Last Name</label>
+                        <input type="text" name="lastName" placeholder="Enter your last name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+
+                <!-- Gender, Looking For, DOB -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Gender</label>
+                        <select name="gender" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>Select Gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Looking For</label>
+                        <select name="lookingFor" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option>Select Preference</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Date of Birth</label>
+                        <input type="date" name="dob" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+
+                <!-- Education, Category -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Category</label>
+                        <input type="text" name="category" placeholder="Enter your category" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Education</label>
+                        <input type="text" name="education" placeholder="Enter your education" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+
+                <!-- Location Info -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Country</label>
+                        <input type="text" name="country" placeholder="Enter your country" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">State</label>
+                        <input type="text" name="state" placeholder="Enter your state" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">City</label>
+                        <input type="text" name="city" placeholder="Enter your city" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+
+                <!-- Phone Number, Email -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                        <input type="text" name="phoneNumber" placeholder="Enter your phone number" pattern="\d{10}" title="Please enter a valid 10-digit phone number" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div> 
+                </div>
+
+                <!-- Additional User Info -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Fathers Name</label>
+                        <input type="text" name="fathersName" placeholder="Enter your father's name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Mothers Name</label>
+                        <input type="text" name="mothersName" placeholder="Enter your mother's name" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Disability</label>
+                        <input type="text" name="disability" placeholder="Enter disability (if any)" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+
+                <!-- Complexion, Caste, Hobbies -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Complexion</label>
+                        <input type="text" name="complexion" placeholder="Enter your complexion" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Caste</label>
+                        <input type="text" name="caste" placeholder="Enter your caste" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Hobbies</label>
+                        <input type="text" name="hobbies" placeholder="Enter your hobbies" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="text-center mt-6">
+                    <button type="submit" class="px-6 py-3 bg-[#580B25] text-white font-semibold rounded-lg hover:bg-[#580b25db] focus:outline-none focus:ring-2 focus:ring-blue-500">Register</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Profile picture preview
+        function previewImage(event) {
+            const reader = new FileReader();
+            reader.onload = function () {
+                const output = document.getElementById('profilePicPreview');
+                output.src = reader.result;
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+
+</body>
+</html>
