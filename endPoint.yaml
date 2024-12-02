@@ -9,19 +9,23 @@ cyber
     veryfi-otp-cyber=#! /cyber/newcyber/verifyOtp
     cyber-login=#! /cyber/cyberLogin
     cyber-logout=#! /cyber/cyberLogout
-    user-usercreate=#! /cyber/usercreate
+    cyber-user-controller=#! /cyber/cyberuser  -get
+    user-usercreate=#! /cyber/usercreate       -post
     user-usercreate=#! /cyber/usercreate/otpverify
     user-userlogin=#! /cyber/userLogin
     user-userlogout=#! /cyber/userLogout
 
   #? opration
     cyber-otp-page=#! /cyber/verify
-    user-creation=#! /cyber/user
+    user-creation=#! /cyber/user      -get
     user-search=#! /cyber/search
-    user-search-result=#! /cyber/searchshow
+    user-search-result=#! /cyber/searchshow  
     user-profile=#! /cyber/profile
     user-feed=#! /cyber/userfeed
 
 user
   #? curd opration
-
+  userfeed=#! /cyber/userfeed
+  userview=#! /cyber/userfeed/userview
+  userProfile=#! /cyber/profile
+  userRequest=#! /cyber/userrequest

@@ -4,42 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wedding App - Client Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../styleSheets/output.css">
 </head>
-<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+<body class="bg-[#580B25] font-sans leading-normal tracking-normal">
 
     <!-- Navbar -->
-    <nav class="bg-white shadow-md">
+    <nav class="shadow-md">
         <div class="container mx-auto px-6 py-4">
             <div class="flex justify-between items-center">
                 <div>
-                    <a href="#" class="text-2xl font-bold text-gray-800 hover:text-gray-600">Wedding App</a>
+                    <a href="#" class="text-2xl font-bold text-white hover:text-gray-600">Wedingram app</a>
                 </div>
                 <div class="hidden md:flex space-x-6">
-                    <a href="./profile.html" class="text-gray-800 hover:text-gray-600">Dashboard</a>
-                    <a href="#search" class="text-gray-800 hover:text-gray-600">Search</a>
-                    <a href="#matches" class="text-gray-800 hover:text-gray-600">Matches</a>
-                    <a href="#profile" class="text-gray-800 hover:text-gray-600">Profile</a>
+                    <a href="/cyber/cyberuser" class="text-white hover:text-gray-600">Dashboard</a>
+                    <a href="/cyber/userfeed" class="text-white hover:text-gray-600">Search</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- User Profile Section -->
-    <section id="profile" class="py-20 bg-white">
+    <section id="profile" class="py-20">
         <div class="container mx-auto px-6">
             <div class="flex flex-col items-center">
                 <!-- Profile Header -->
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHNhcmklMjBtb2RlbCUyMGluJTIwbGFuZHNjYXBlfGVufDB8fDB8fHww" alt="Profile Banner" class="w-full h-48 object-cover rounded-t-lg">
+                <div class="relative w-full rounded-xl h-96 overflow-hidden">
+                    <img class="object-cover w-full h-full" src="https://cdn.mysoresareeudyog.com/media/mageplaza/blog/post/m/y/mysoresaree_1348x500_1_.jpg" alt="Profile Banner" class="w-full h-48 object-cover rounded-t-lg">
                     <div class="absolute bottom-0 left-1/2 transform -translate-x-1/2 bg-white p-4 rounded-lg shadow-lg border-4 border-white">
                         <img src="https://plus.unsplash.com/premium_photo-1691030255129-34ba0257ebef?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGluZGlhbiUyMG1vZGVsJTIwcGljc3xlbnwwfHwwfHx8MA%3D%3D" alt="Profile Picture" class="w-24 h-24 object-cover rounded-full border-4 border-gray-200">
                     </div>
                 </div>
                 <!-- Profile Content -->
                 <div class="text-center mt-16">
-                    <h2 class="text-3xl font-bold text-gray-800">Jane Doe</h2>
-                    <p class="text-lg text-gray-600 mt-2">Looking for a life partner who shares my values and interests.</p>
+                    <h2 class="text-3xl font-bold text-white">Jane Doe</h2>
+                    <p class="text-lg text-white mt-2">Looking for a life partner who shares my values and interests.</p>
                     <div class="mt-6">
                         <a href="#edit-profile" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-500 transition">Edit Profile</a>
                     </div>
@@ -106,7 +105,7 @@
     <!-- Footer -->
     <footer class="bg-white py-6">
         <div class="container mx-auto px-6 text-center">
-            <p class="text-gray-600">© 2024 Wedding App. All rights reserved.</p>
+            <p class="text-gray-600">© 2024 Wedingram app. All rights reserved.</p>
         </div>
     </footer>
 

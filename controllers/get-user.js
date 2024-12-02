@@ -2,7 +2,7 @@ const userModel = require("../models/userModel");
 
 
 module.exports.pageNotFound = (req, res) => {
-    res.send('404 Not Found');
+    res.render('404');
 }
 
 module.exports.userHomeController = (req, res) => {
@@ -71,3 +71,34 @@ module.exports.searchController = async (req, res) => {
         res.status(500).json({ error: 'Server error' });
     }
 };
+
+
+module.exports.userview = (req, res) => {
+    try {
+        res.render('userview');
+    } catch (error) {
+        console.error(`Something went wrong in this route ${error.message}`);
+        res.status(404).render("404", { title: "Page Not Found" });
+    }
+}
+
+
+module.exports.userEdit = (req,res) => {
+    try {
+        res.render('useredit')
+    } catch (error) {
+        console.error(`Something went wrong in this route ${error.message}`);
+        res.status(404).render("404", { title: "Page Not Found" }); 
+    }
+}
+
+
+module.exports.usersviews = (req, res) => {
+    try {
+        // const {ucserId} = req.params;
+        res.render('userview')
+    } catch (error) {
+        console.error(`Something went wrong in this route ${error.message}`);
+        res.status(404).render("404", { title: "Page Not Found" }); 
+    }
+}

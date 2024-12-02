@@ -97,8 +97,9 @@ module.exports.adminlogout = async (req, res) => {
     return res.redirect('/');
 }
 
-module.exports.dashboardcybers = (req, res) => {
+module.exports.dashboardcybers = async (req, res) => {
     try {
+        // const activeCyber = await cyberModel.find({ activity: "inActive" });
         res.render('dashboardcybers')
     } catch (error) {
         console.error(`Something went wrong in this route ${error.message}`);

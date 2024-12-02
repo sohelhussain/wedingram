@@ -21,7 +21,7 @@ module.exports.userCreateController = async (req, res) => {
 
         if (user) return res.status(401).send("You already have an account, please login.");
 
-        // Generate and send OTP
+
         const generatedOtp = Math.floor(100000 + Math.random() * 900000);
         req.session.otp = generatedOtp;
         req.session.email = email;
@@ -37,7 +37,7 @@ module.exports.userCreateController = async (req, res) => {
 
         };
 
-        // Send OTP via email
+
         const mailOptions = {
             from: process.env.GMAIL_USER,
             to: email,
@@ -56,12 +56,12 @@ module.exports.userCreateOtpVerification = async (req, res) => {
     const { otp } = req.body;
 
     try {
-        // Validate OTP and session data
+
         if (otp != req.session.otp || !req.session.email) {
             return res.status(400).json({ error: "Invalid OTP or email mismatch. Please try again." });
         }
 
-        // Retrieve user data from session
+
         const {
             firstName,
             phoneNumber,
@@ -73,11 +73,11 @@ module.exports.userCreateOtpVerification = async (req, res) => {
             district,
         } = req.session.userData;
 
-        // Hash the password
+
         let salt = await bcrypt.genSalt(10);
         let hash = await bcrypt.hash(password, salt);
 
-        // Create a new user
+
         let newUser = await userModel.create({
             firstName,
             phoneNumber,
@@ -89,11 +89,11 @@ module.exports.userCreateOtpVerification = async (req, res) => {
             district,
         });
 
-        // Generate JWT token
+
         let token = generateToken(newUser);
         res.cookie("userToken", token);
 
-        // Clear session data
+
         req.session.destroy();
 
         return res.status(201).json({ message: "User created successfully.", newUser });
@@ -127,3 +127,69 @@ module.exports.userLogoutController = async (req, res) => {
     res.clearCookie("userToken");
     return res.status(200).json({ message: "Logout successful." });
 };
+
+
+
+
+module.exports.userPostEdit = async (req, res) => {
+    try {
+
+        const {
+            firstName,
+            lastName,
+            gender,
+            lookingFor,
+            dob,
+            category,
+            education,
+            country,
+            state,
+            city,
+            phoneNumber,
+            fathersName,
+            mothersName,
+            disability,
+            complexion,
+            caste,
+            hobbies,
+        } = req.body;
+
+
+        const userId = req.user._id;
+
+
+        const updatedUser = await userModel.findByIdAndUpdate(
+            userId, 
+            {
+                firstName,
+                lastName,
+                gender,
+                lookingFor,
+                dob,
+                category,
+                education,
+                country,
+                state,
+                city,
+                phoneNumber,
+                fathersName,
+                mothersName,
+                disability,
+                complexion,
+                caste,
+                hobbies,
+            },
+            { new: true, runValidators: true } 
+        );
+
+
+        if (!updatedUser) {
+            return res.status(404).json({ error: "User not found" });
+        }
+
+        res.status(200).redirect('/cyber/profile');
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+}; 
