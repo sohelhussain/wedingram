@@ -192,4 +192,29 @@ module.exports.userPostEdit = async (req, res) => {
         console.error(error);
         res.status(500).json({ error: "Internal Server Error" });
     }
-}; 
+};
+
+
+module.exports.requestcath = async (req, res) => {
+    try {
+        const meUser = req.user._id; 
+        const targetUserId = req.params.id; 
+
+
+        const targetUser = await userModel.findById(targetUserId);
+        if (!targetUser) {
+            return res.status(404).json({ error: "Target user not found." });
+        }
+
+
+             await userModel.findByIdAndUpdate(
+            targetUserId,
+            { $addToSet: { request: meUser } }, 
+            { new: true } 
+        );
+        res.status(200).redirect('/cyber/profile'); 
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ error: "Internal Server Error" });
+    }
+};

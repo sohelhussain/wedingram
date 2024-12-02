@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { cyberRegister, cybersignin, verifyController, cyberUserController} = require("../controllers/get-cyber");
 const { postRegisterController, postRegisterOtpverification, cyberLoginController, cyberLogoutController, postcyberedit } = require("../controllers/post-cyber");
-const { userHomeController, searchController, searchBarController,userProfileController, userFeedController, pageNotFound, userview, userEdit, usersviews} = require("../controllers/get-user");
+const { userHomeController, searchController,userProfileController, userFeedController, pageNotFound, userview, userEdit, usersviews ,userLoginPageController} = require("../controllers/get-user");
 const { userCreateController , userCreateOtpVerification, userLoginController, userLogoutController, userPostEdit } = require("../controllers/post-user");
 const upload = require("../config/multer-config")
 
@@ -36,7 +36,7 @@ router.get('/cyberLogout', cyberLogoutController);
 
 router.get("/user", userHomeController);
 router.get('/search', searchController)
-router.get('/searchshow',searchBarController)
+// router.get('/searchshow',searchBarController)
 router.get('/profile',userProfileController)
 router.get('/userfeed', userFeedController)
 // router.get('/pagenotfound',pageNotFound)
@@ -48,11 +48,12 @@ router.post("/usercreate/otpverify", userCreateOtpVerification);
 router.post('/useredit', userPostEdit);
 
 
-router.post('/userLogin', userLoginController);
-router.get('/userLogout', userLogoutController);
+router.post('/userlogin', userLoginController);
+router.get('/userlogin', userLoginPageController);
+router.get('/userlogout', userLogoutController);
 router.get('/userfeed/userview', userview);
 router.get('/useredit', userEdit);
-router.get('/viewsuser/:ucserId', usersviews)
+router.get('/viewsuser/:ucserId', usersviews);
 
 
 router.get('*', pageNotFound)

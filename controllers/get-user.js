@@ -8,9 +8,9 @@ module.exports.pageNotFound = (req, res) => {
 module.exports.userHomeController = (req, res) => {
   res.render("userregister");
 };
-module.exports.searchBarController = (req, res) => {
-  res.render("search");
-};
+// module.exports.searchBarController = (req, res) => {
+//   res.render("search");
+// };
 module.exports.userProfileController = (req, res) => {
   res.render("userProfile");
 };
@@ -31,6 +31,7 @@ module.exports.userFeedController = async (req, res) => {
 };
 
 module.exports.searchController = async (req, res) => {
+    console.log("object");
     try {
         const { query } = req.query;
 
@@ -65,7 +66,7 @@ module.exports.searchController = async (req, res) => {
 
         // Perform the aggregation query
         const userData = await userModel.aggregate(searchEngine);
-        res.json(userData);
+        res.render('userfeed',{users:userData})
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Server error' });
@@ -97,6 +98,15 @@ module.exports.usersviews = (req, res) => {
     try {
         // const {ucserId} = req.params;
         res.render('userview')
+    } catch (error) {
+        console.error(`Something went wrong in this route ${error.message}`);
+        res.status(404).render("404", { title: "Page Not Found" }); 
+    }
+}
+module.exports.userLoginPageController = (req, res) => {
+    try {
+        // const {ucserId} = req.params;
+        res.render('userlogin')
     } catch (error) {
         console.error(`Something went wrong in this route ${error.message}`);
         res.status(404).render("404", { title: "Page Not Found" }); 
